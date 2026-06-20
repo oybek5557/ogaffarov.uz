@@ -1,6 +1,12 @@
 (function(){
   "use strict";
 
+  // Page-load fade transition
+  document.documentElement.classList.add('js');
+  window.addEventListener('load', function(){
+    document.body.classList.remove('page-loading');
+  });
+
   // Theme toggle
   var root = document.documentElement;
   var themeBtn = document.querySelector('.theme-toggle');
@@ -159,6 +165,80 @@
       document.getElementById(target).classList.add('active');
     });
   });
+
+  // Mouse parallax on hero portrait + blobs
+  var hero = document.querySelector('.hero');
+  var portraitWrap = document.querySelector('.hero-portrait-wrap');
+  var heroBlobs = document.querySelectorAll('.hero .blob');
+  if(hero && window.matchMedia('(prefers-reduced-motion: reduce)').matches === false){
+    hero.addEventListener('mousemove', function(e){
+      var rect = hero.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width - 0.5;
+      var py = (e.clientY - rect.top) / rect.height - 0.5;
+      if(portraitWrap) portraitWrap.style.transform = 'translate(' + (px * -18) + 'px,' + (py * -18) + 'px)';
+      heroBlobs.forEach(function(b, i){
+        var depth = (i + 1) * 14;
+        b.style.transform = 'translate(' + (px * depth) + 'px,' + (py * depth) + 'px)';
+      });
+    });
+    hero.addEventListener('mouseleave', function(){
+      if(portraitWrap) portraitWrap.style.transform = '';
+      heroBlobs.forEach(function(b){ b.style.transform = ''; });
+    });
+  }
+
+  // Network/particle background in hero
+  var netCanvas = document.querySelector('.hero-net');
+  if(netCanvas && hero){
+    var ctx = netCanvas.getContext('2d');
+    var nodes = [];
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function resizeNet(){
+      netCanvas.width = hero.offsetWidth;
+      netCanvas.height = hero.offsetHeight;
+      var count = Math.min(60, Math.round((netCanvas.width * netCanvas.height) / 18000));
+      nodes = [];
+      for(var i = 0; i < count; i++){
+        nodes.push({
+          x: Math.random() * netCanvas.width,
+          y: Math.random() * netCanvas.height,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3
+        });
+      }
+    }
+    function drawNet(){
+      ctx.clearRect(0, 0, netCanvas.width, netCanvas.height);
+      var maxDist = 140;
+      nodes.forEach(function(n){
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > netCanvas.width) n.vx *= -1;
+        if(n.y < 0 || n.y > netCanvas.height) n.vy *= -1;
+      });
+      for(var i = 0; i < nodes.length; i++){
+        for(var j = i + 1; j < nodes.length; j++){
+          var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if(dist < maxDist){
+            ctx.strokeStyle = 'rgba(91,140,255,' + (1 - dist / maxDist) * 0.25 + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+        ctx.fillStyle = 'rgba(126,224,195,.6)';
+        ctx.beginPath();
+        ctx.arc(nodes[i].x, nodes[i].y, 2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      if(!reduceMotion) requestAnimationFrame(drawNet);
+    }
+    resizeNet();
+    drawNet();
+    window.addEventListener('resize', resizeNet);
+  }
 
   // Contact form (AJAX submit to contact_process.php)
   var form = document.getElementById('contactForm');
