@@ -28,12 +28,13 @@
 		<div class="container">
 			<a href="index.html" class="brand">Oybek<span>.</span></a>
 			<ul class="nav-links">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about-us.html">About</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="contact.html" class="active">Contact</a></li>
+				<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+				<li><a href="about-us.html" data-i18n="nav.about">About</a></li>
+				<li><a href="services.html" data-i18n="nav.services">Services</a></li>
+				<li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
 			</ul>
 			<div class="nav-actions">
+				<button class="lang-toggle" aria-label="Toggle language">EN</button>
 				<button class="theme-toggle" aria-label="Toggle theme"><i class="fa fa-sun-o"></i></button>
 				<button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
 			</div>
@@ -42,8 +43,8 @@
 
 	<header class="page-banner">
 		<div class="container">
-			<h1>Contact Me</h1>
-			<div class="breadcrumb-nav"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+			<h1 data-i18n="banner.contact">Contact Me</h1>
+			<div class="breadcrumb-nav"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.contact">Contact</span></div>
 		</div>
 	</header>
 
@@ -56,8 +57,8 @@
 			<div class="contact-grid">
 				<div class="reveal">
 					<ul class="contact-info-list">
-						<li><i class="fa fa-map-marker"></i> Samarkand, Uzbekistan — Samariya 20</li>
-						<li><i class="fa fa-phone"></i> +998 93 008 5860 (24/7)</li>
+						<li><i class="fa fa-map-marker"></i> <span data-i18n="contact2.address">Samarkand, Uzbekistan — Samariya 20</span></li>
+						<li><i class="fa fa-phone"></i> <span data-i18n="contact2.phone">+998 93 008 5860 (24/7)</span></li>
 						<li><i class="fa fa-envelope"></i> gaffarovoybek21@gmail.com</li>
 					</ul>
 					<div class="social-row">
@@ -69,12 +70,12 @@
 				<div class="reveal">
 					<form class="contact-form" id="contactForm">
 						<div class="form-row">
-							<input type="text" name="name" placeholder="Your name" required minlength="2">
-							<input type="email" name="email" placeholder="Your email" required>
+							<input type="text" name="name" placeholder="Your name" data-i18n-ph="form.name" required minlength="2">
+							<input type="email" name="email" placeholder="Your email" data-i18n-ph="form.email" required>
 						</div>
-						<input type="text" name="subject" placeholder="Subject" required minlength="4">
-						<textarea name="message" placeholder="Your message" required minlength="20"></textarea>
-						<button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send message</button>
+						<input type="text" name="subject" placeholder="Subject" data-i18n-ph="form.subject" required minlength="4">
+						<textarea name="message" placeholder="Your message" data-i18n-ph="form.message" required minlength="20"></textarea>
+						<button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> <span data-i18n="form.send">Send message</span></button>
 						<div id="form-status"></div>
 					</form>
 				</div>
@@ -89,11 +90,12 @@
 				<a href="https://www.instagram.com/ogaffarov/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
 				<a href="https://my.linkedin.com/in/oybek21" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 			</div>
-			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. All rights reserved.</p>
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. <span data-i18n="footer.rights">All rights reserved.</span></p>
 		</div>
 	</footer>
 
 	<button class="to-top" aria-label="Back to top"><i class="fa fa-angle-up"></i></button>
+	<script src="js/i18n.js"></script>
 	<script src="js/modern.js"></script>
 </body>
 </html>

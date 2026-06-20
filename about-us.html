@@ -28,12 +28,13 @@
 		<div class="container">
 			<a href="index.html" class="brand">Oybek<span>.</span></a>
 			<ul class="nav-links">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about-us.html" class="active">About</a></li>
-				<li><a href="services.html">Services</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+				<li><a href="about-us.html" class="active" data-i18n="nav.about">About</a></li>
+				<li><a href="services.html" data-i18n="nav.services">Services</a></li>
+				<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
 			</ul>
 			<div class="nav-actions">
+				<button class="lang-toggle" aria-label="Toggle language">EN</button>
 				<button class="theme-toggle" aria-label="Toggle theme"><i class="fa fa-sun-o"></i></button>
 				<button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
 			</div>
@@ -42,8 +43,8 @@
 
 	<header class="page-banner">
 		<div class="container">
-			<h1>About Me</h1>
-			<div class="breadcrumb-nav"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+			<h1 data-i18n="banner.about">About Me</h1>
+			<div class="breadcrumb-nav"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.about">About</span></div>
 		</div>
 	</header>
 
@@ -53,15 +54,15 @@
 			<div class="profile-grid">
 				<div class="photo reveal"><img src="img/personal-2.jpg" alt="Oybek Gaffarov"></div>
 				<div class="reveal">
-					<div class="eyebrow">Hello everybody, I am</div>
+					<div class="eyebrow" data-i18n="about2.hello">Hello everybody, I am</div>
 					<h3>Oybek Gaffarov</h3>
-					<div class="subtitle">Senior IT Specialist &amp; System Administrator</div>
-					<p>Anyone who stops learning is old — whether at twenty or eighty. Anyone who keeps learning stays young.</p>
+					<div class="subtitle" data-i18n="about2.role">Senior IT Specialist &amp; System Administrator</div>
+					<p data-i18n="about2.quote">Anyone who stops learning is old — whether at twenty or eighty. Anyone who keeps learning stays young.</p>
 					<ul class="contact-info-list">
-						<li><i class="fa fa-birthday-cake"></i> 21st July, 1992</li>
+						<li><i class="fa fa-birthday-cake"></i> <span data-i18n="about2.dob">21st July, 1992</span></li>
 						<li><i class="fa fa-phone"></i> +601 12 374 1353</li>
 						<li><i class="fa fa-envelope"></i> gaffarovoybek21@gmail.com</li>
-						<li><i class="fa fa-map-marker"></i> #Everywhere</li>
+						<li><i class="fa fa-map-marker"></i> <span data-i18n="about2.everywhere">#Everywhere</span></li>
 					</ul>
 					<div class="social-row">
 						<a href="https://ru-ru.facebook.com/oybek.gaffarov" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
@@ -77,30 +78,30 @@
 		<canvas class="sec-bg" data-anim="server"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">My story</div>
-				<h2>About myself</h2>
+				<div class="eyebrow" data-i18n="about2.eyebrow2">My story</div>
+				<h2 data-i18n="about2.h2">About myself</h2>
 			</div>
 			<div class="about-grid">
 				<div class="reveal">
-					<p>I was raised in Samarkand until I was 19, then spent seven years in Kuala Lumpur — earning my degree at Asia Pacific University and starting my IT career there in network and helpdesk support.</p>
-						<p>Since then I’ve grown into senior IT and system administration roles spanning Malaysia and Uzbekistan: Windows Server &amp; Active Directory, Microsoft 365, identity &amp; access management, endpoint security (MDM/UEM), firewalls and VPNs, IP telephony and 1C:Enterprise/ERP infrastructure. I’m a technology addict who follows the latest news every day.</p>
-						<p>Today I support a remote-first, security-conscious workforce with zero-trust access, automated backups and tight SLAs — keeping everything reliable and well documented.</p>
+					<p data-i18n="about2.p1">I was raised in Samarkand until I was 19, then spent seven years in Kuala Lumpur — earning my degree at Asia Pacific University and starting my IT career there in network and helpdesk support.</p>
+						<p data-i18n="about2.p2">Since then I’ve grown into senior IT and system administration roles spanning Malaysia and Uzbekistan: Windows Server &amp; Active Directory, Microsoft 365, identity &amp; access management, endpoint security (MDM/UEM), firewalls and VPNs, IP telephony and 1C:Enterprise/ERP infrastructure. I’m a technology addict who follows the latest news every day.</p>
+						<p data-i18n="about2.p3">Today I support a remote-first, security-conscious workforce with zero-trust access, automated backups and tight SLAs — keeping everything reliable and well documented.</p>
 				</div>
 				<div class="reveal">
 					<div class="skills-grid">
-							<div class="skill-item"><h4>Network &amp; Infrastructure <span class="pct">90%</span></h4><div class="bar"><span data-pct="90"></span></div></div>
-							<div class="skill-item"><h4>Windows Server / Active Directory <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
-							<div class="skill-item"><h4>Identity &amp; Access (JumpCloud, M365) <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
-							<div class="skill-item"><h4>Endpoint Security &amp; MDM/UEM <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
-							<div class="skill-item"><h4>1C:Enterprise / ERP Administration <span class="pct">80%</span></h4><div class="bar"><span data-pct="80"></span></div></div>
+							<div class="skill-item"><h4><span data-i18n="skill.network">Network &amp; Infrastructure</span> <span class="pct">90%</span></h4><div class="bar"><span data-pct="90"></span></div></div>
+							<div class="skill-item"><h4><span data-i18n="skill.winserver">Windows Server / Active Directory</span> <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
+							<div class="skill-item"><h4><span data-i18n="skill.iam">Identity &amp; Access (JumpCloud, M365)</span> <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
+							<div class="skill-item"><h4><span data-i18n="skill.endpoint">Endpoint Security &amp; MDM/UEM</span> <span class="pct">85%</span></h4><div class="bar"><span data-pct="85"></span></div></div>
+							<div class="skill-item"><h4><span data-i18n="skill.erp">1C:Enterprise / ERP Administration</span> <span class="pct">80%</span></h4><div class="bar"><span data-pct="80"></span></div></div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="stats-grid reveal">
-				<div class="stat-card"><div class="num">10+</div><p>Years in IT</p></div>
-				<div class="stat-card"><div class="num">6</div><p>Companies &amp; roles</p></div>
-				<div class="stat-card"><div class="num">2</div><p>Countries worked in</p></div>
+				<div class="stat-card"><div class="num">10+</div><p data-i18n="about2.stat1">Years in IT</p></div>
+				<div class="stat-card"><div class="num">6</div><p data-i18n="about2.stat2">Companies &amp; roles</p></div>
+				<div class="stat-card"><div class="num">2</div><p data-i18n="about2.stat3">Countries worked in</p></div>
 			</div>
 		</div>
 	</section>
@@ -112,11 +113,12 @@
 				<a href="https://www.instagram.com/ogaffarov/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
 				<a href="https://my.linkedin.com/in/oybek21" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 			</div>
-			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. All rights reserved.</p>
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. <span data-i18n="footer.rights">All rights reserved.</span></p>
 		</div>
 	</footer>
 
 	<button class="to-top" aria-label="Back to top"><i class="fa fa-angle-up"></i></button>
+	<script src="js/i18n.js"></script>
 	<script src="js/modern.js"></script>
 </body>
 </html>

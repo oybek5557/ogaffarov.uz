@@ -28,14 +28,15 @@
 		<div class="container">
 			<a href="#home" class="brand">Oybek<span>.</span></a>
 			<ul class="nav-links">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#services">Services</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#home" data-i18n="nav.home">Home</a></li>
+				<li><a href="#about" data-i18n="nav.about">About</a></li>
+				<li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+				<li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+				<li><a href="#services" data-i18n="nav.services">Services</a></li>
+				<li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
 			</ul>
 			<div class="nav-actions">
+				<button class="lang-toggle" aria-label="Toggle language">EN</button>
 				<button class="theme-toggle" aria-label="Toggle theme"><i class="fa fa-sun-o"></i></button>
 				<button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
 			</div>
@@ -48,13 +49,13 @@
 		<span class="blob b2"></span>
 		<div class="container">
 			<div class="hero-text reveal">
-				<div class="hero-eyebrow">Welcome to my portfolio</div>
-				<h1>Hi, I'm <span class="highlight">Oybek Gaffarov</span></h1>
-				<p class="role">I'm a <span id="typed-role" data-roles='["Senior IT Specialist","System Administrator","Network Engineer","IAM &amp; Endpoint Specialist","1C/ERP Administrator"]'></span><span class="cursor">&nbsp;</span></p>
-				<p class="lead">I design, secure and run the IT backbone of modern businesses — from networks, servers and identity to endpoint security and ERP. 10+ years turning complex infrastructure into reliable, well-documented systems.</p>
+				<div class="hero-eyebrow" data-i18n="hero.eyebrow">Welcome to my portfolio</div>
+				<h1 data-i18n-html="hero.h1">Hi, I'm <span class="highlight">Oybek Gaffarov</span></h1>
+				<p class="role">I'm a <span id="typed-role" data-roles='["Senior IT Specialist","System Administrator","Network Engineer","IAM &amp; Endpoint Specialist","1C/ERP Administrator"]' data-roles-ru='["Старший ИТ-специалист","Системный администратор","Сетевой инженер","Специалист по IAM и безопасности","Администратор 1С/ERP"]'></span><span class="cursor">&nbsp;</span></p>
+				<p class="lead" data-i18n="hero.lead">I design, secure and run the IT backbone of modern businesses — from networks, servers and identity to endpoint security and ERP. 10+ years turning complex infrastructure into reliable, well-documented systems.</p>
 				<div class="btn-row">
-					<a href="#contact" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Get in touch</a>
-					<a href="#experience" class="btn btn-outline"><i class="fa fa-briefcase"></i> View experience</a>
+					<a href="#contact" class="btn btn-primary"><i class="fa fa-paper-plane"></i> <span data-i18n="hero.btn.contact">Get in touch</span></a>
+					<a href="#experience" class="btn btn-outline"><i class="fa fa-briefcase"></i> <span data-i18n="hero.btn.experience">View experience</span></a>
 				</div>
 				<div class="social-row">
 					<a href="https://ru-ru.facebook.com/oybek.gaffarov" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
@@ -65,7 +66,7 @@
 			<div class="hero-portrait-wrap reveal">
 				<div class="hero-portrait">
 					<div class="ring"><img src="img/personal.jpg" alt="Oybek Gaffarov"></div>
-					<div class="badge"><span class="dot"></span> Open to hear new ideas</div>
+					<div class="badge"><span class="dot"></span> <span data-i18n="hero.badge">Open to hear new ideas</span></div>
 				</div>
 			</div>
 		</div>
@@ -75,26 +76,26 @@
 		<canvas class="sec-bg" data-anim="server"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">About me</div>
-				<h2>A little about my journey</h2>
-				<p>Senior IT specialist and system administrator with 10+ years across networking, infrastructure, identity, endpoint security and ERP — spanning Malaysia and Uzbekistan.</p>
+				<div class="eyebrow" data-i18n="about.eyebrow">About me</div>
+				<h2 data-i18n="about.h2">A little about my journey</h2>
+				<p data-i18n="about.lead">Senior IT specialist and system administrator with 10+ years across networking, infrastructure, identity, endpoint security and ERP — spanning Malaysia and Uzbekistan.</p>
 			</div>
 			<div class="about-grid">
 				<div class="reveal">
-					<p>I'm Oybek Gaffarov. My career started with hands-on network and helpdesk support in Kuala Lumpur and has grown into senior IT roles covering the full stack — Windows Server &amp; Active Directory, Microsoft 365, identity &amp; access management, endpoint security (MDM/UEM), firewalls and VPNs, IP telephony, and 1C:Enterprise/ERP infrastructure.</p>
-					<p>Today I support a remote-first, security-conscious workforce with zero-trust access, automated backups and tight SLAs — while keeping everything documented and reliable. I'm a technology addict who believes that staying curious is the real edge.</p>
+					<p data-i18n-html="about.p1">I'm Oybek Gaffarov. My career started with hands-on network and helpdesk support in Kuala Lumpur and has grown into senior IT roles covering the full stack — Windows Server &amp; Active Directory, Microsoft 365, identity &amp; access management, endpoint security (MDM/UEM), firewalls and VPNs, IP telephony, and 1C:Enterprise/ERP infrastructure.</p>
+					<p data-i18n="about.p2">Today I support a remote-first, security-conscious workforce with zero-trust access, automated backups and tight SLAs — while keeping everything documented and reliable. I'm a technology addict who believes that staying curious is the real edge.</p>
 					<ul class="facts">
-						<li><i class="fa fa-briefcase"></i> 10+ years in IT</li>
-						<li><i class="fa fa-map-marker"></i> Samarkand, Uzbekistan · Remote</li>
+						<li><i class="fa fa-briefcase"></i> <span data-i18n="about.fact1">10+ years in IT</span></li>
+						<li><i class="fa fa-map-marker"></i> <span data-i18n="about.fact2">Samarkand, Uzbekistan · Remote</span></li>
 						<li><i class="fa fa-envelope"></i> gaffarovoybek21@gmail.com</li>
-						<li><i class="fa fa-language"></i> English · Russian · Uzbek</li>
+						<li><i class="fa fa-language"></i> <span data-i18n="about.fact4">English · Russian · Uzbek</span></li>
 					</ul>
 				</div>
 				<div class="reveal">
 					<div class="card">
 						<i class="fa fa-graduation-cap"></i>
-						<h4>Education</h4>
-						<p>B.Tech, Business Information System (BIS) — Asia Pacific University of Technology &amp; Innovation (APU), Kuala Lumpur, Malaysia (2012 – 2016)</p>
+						<h4 data-i18n="about.edu.title">Education</h4>
+						<p data-i18n="about.edu.body">B.Tech, Business Information System (BIS) — Asia Pacific University of Technology &amp; Innovation (APU), Kuala Lumpur, Malaysia (2012 – 2016)</p>
 					</div>
 				</div>
 			</div>
@@ -105,33 +106,33 @@
 		<canvas class="sec-bg" data-anim="orbit"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">What I do best</div>
-				<h2>Skills &amp; expertise</h2>
-				<p>A decade of hands-on work across infrastructure, identity, security and enterprise systems.</p>
+				<div class="eyebrow" data-i18n="skills.eyebrow">What I do best</div>
+				<h2 data-i18n="skills.h2">Skills &amp; expertise</h2>
+				<p data-i18n="skills.lead">A decade of hands-on work across infrastructure, identity, security and enterprise systems.</p>
 			</div>
 			<div class="skills-grid reveal">
 				<div class="skill-item">
-					<h4>Network &amp; Infrastructure <span class="pct">90%</span></h4>
+					<h4><span data-i18n="skill.network">Network &amp; Infrastructure</span> <span class="pct">90%</span></h4>
 					<div class="bar"><span data-pct="90"></span></div>
 				</div>
 				<div class="skill-item">
-					<h4>Windows Server / Active Directory <span class="pct">85%</span></h4>
+					<h4><span data-i18n="skill.winserver">Windows Server / Active Directory</span> <span class="pct">85%</span></h4>
 					<div class="bar"><span data-pct="85"></span></div>
 				</div>
 				<div class="skill-item">
-					<h4>Identity &amp; Access (JumpCloud, M365) <span class="pct">85%</span></h4>
+					<h4><span data-i18n="skill.iam">Identity &amp; Access (JumpCloud, M365)</span> <span class="pct">85%</span></h4>
 					<div class="bar"><span data-pct="85"></span></div>
 				</div>
 				<div class="skill-item">
-					<h4>Endpoint Security &amp; MDM/UEM <span class="pct">85%</span></h4>
+					<h4><span data-i18n="skill.endpoint">Endpoint Security &amp; MDM/UEM</span> <span class="pct">85%</span></h4>
 					<div class="bar"><span data-pct="85"></span></div>
 				</div>
 				<div class="skill-item">
-					<h4>Firewalls &amp; VPN (Zyxel, Forti, Pritunl) <span class="pct">80%</span></h4>
+					<h4><span data-i18n="skill.firewalls">Firewalls &amp; VPN (Zyxel, Forti, Pritunl)</span> <span class="pct">80%</span></h4>
 					<div class="bar"><span data-pct="80"></span></div>
 				</div>
 				<div class="skill-item">
-					<h4>1C:Enterprise / ERP Administration <span class="pct">80%</span></h4>
+					<h4><span data-i18n="skill.erp">1C:Enterprise / ERP Administration</span> <span class="pct">80%</span></h4>
 					<div class="bar"><span data-pct="80"></span></div>
 				</div>
 			</div>
@@ -149,71 +150,71 @@
 		<canvas class="sec-bg" data-anim="timeline"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">My background</div>
-				<h2>Experience &amp; education</h2>
-				<p>A timeline of where I've worked and studied.</p>
+				<div class="eyebrow" data-i18n="exp.eyebrow">My background</div>
+				<h2 data-i18n="exp.h2">Experience &amp; education</h2>
+				<p data-i18n="exp.lead">A timeline of where I've worked and studied.</p>
 			</div>
 			<div class="reveal">
 				<div class="tabs">
-					<button class="tab-btn active" data-tab="exp-panel">Experience</button>
-					<button class="tab-btn" data-tab="edu-panel">Education</button>
+					<button class="tab-btn active" data-tab="exp-panel" data-i18n="exp.tab.experience">Experience</button>
+					<button class="tab-btn" data-tab="edu-panel" data-i18n="exp.tab.education">Education</button>
 				</div>
 				<div class="tab-panel active" id="exp-panel">
 					<div class="timeline">
 						<div class="timeline-item">
-							<div class="period">May 2024 – Present</div>
-							<h4>Duty IT Support</h4>
-							<div class="company"><i class="fa fa-building-o"></i> ogaffarov.uz · Part-time · Remote</div>
-							<p>Remote-first IT operations across identity, endpoint security and zero-trust networking for a distributed workforce.</p>
+							<div class="period" data-i18n="exp.t1.period">May 2024 – Present</div>
+							<h4 data-i18n="exp.t1.title">Duty IT Support</h4>
+							<div class="company"><i class="fa fa-building-o"></i> <span data-i18n="exp.t1.company">ogaffarov.uz · Part-time · Remote</span></div>
+							<p data-i18n="exp.t1.desc">Remote-first IT operations across identity, endpoint security and zero-trust networking for a distributed workforce.</p>
 							<ul class="role-points">
-								<li>Administer <strong>JumpCloud</strong> for centralized directory, SSO and user lifecycle management.</li>
-								<li>Manage <strong>Google Workspace</strong> — provisioning, group policies and Drive security.</li>
-								<li>Device compliance &amp; patching via <strong>ManageEngine Endpoint Central</strong> across a mixed macOS/Windows fleet.</li>
-								<li>Secure remote access with <strong>FortiClient ZTNA</strong> and <strong>Pritunl VPN</strong>; Tier 2/3 support via <strong>Jira</strong> with SLA &amp; RCA.</li>
+								<li data-i18n-html="exp.t1.li1">Administer <strong>JumpCloud</strong> for centralized directory, SSO and user lifecycle management.</li>
+								<li data-i18n-html="exp.t1.li2">Manage <strong>Google Workspace</strong> — provisioning, group policies and Drive security.</li>
+								<li data-i18n-html="exp.t1.li3">Device compliance &amp; patching via <strong>ManageEngine Endpoint Central</strong> across a mixed macOS/Windows fleet.</li>
+								<li data-i18n-html="exp.t1.li4">Secure remote access with <strong>FortiClient ZTNA</strong> and <strong>Pritunl VPN</strong>; Tier 2/3 support via <strong>Jira</strong> with SLA &amp; RCA.</li>
 							</ul>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Aug 2020 – Present</div>
-							<h4>Senior Information Technology Specialist</h4>
-							<div class="company"><i class="fa fa-building-o"></i> Nishon Baht · Full-time · Samarqand, Uzbekistan</div>
-							<p>Own the full IT stack — network, servers, security and industrial systems — for a manufacturing business.</p>
+							<div class="period" data-i18n="exp.t2.period">Aug 2020 – Present</div>
+							<h4 data-i18n="exp.t2.title">Senior Information Technology Specialist</h4>
+							<div class="company"><i class="fa fa-building-o"></i> <span data-i18n="exp.t2.company">Nishon Baht · Full-time · Samarqand, Uzbekistan</span></div>
+							<p data-i18n="exp.t2.desc">Own the full IT stack — network, servers, security and industrial systems — for a manufacturing business.</p>
 							<ul class="role-points">
-								<li>Redesigned the office network; deployed <strong>Zyxel firewalls</strong>, managed switches, dual-WAN and SSL/IPsec VPN.</li>
-								<li>Deployed <strong>Windows Server</strong> (AD, DNS), administered <strong>Microsoft 365</strong> and automated NAS backups.</li>
-								<li>Administered <strong>1C:Enterprise</strong> and provisioned infrastructure for a new ERP rollout.</li>
-								<li>Deployed industrial PCs, integrated barcode scanners &amp; weighing terminals, and managed <strong>Yeastar IP PBX</strong> &amp; CCTV.</li>
+								<li data-i18n-html="exp.t2.li1">Redesigned the office network; deployed <strong>Zyxel firewalls</strong>, managed switches, dual-WAN and SSL/IPsec VPN.</li>
+								<li data-i18n-html="exp.t2.li2">Deployed <strong>Windows Server</strong> (AD, DNS), administered <strong>Microsoft 365</strong> and automated NAS backups.</li>
+								<li data-i18n-html="exp.t2.li3">Administered <strong>1C:Enterprise</strong> and provisioned infrastructure for a new ERP rollout.</li>
+								<li data-i18n-html="exp.t2.li4">Deployed industrial PCs, integrated barcode scanners &amp; weighing terminals, and managed <strong>Yeastar IP PBX</strong> &amp; CCTV.</li>
 							</ul>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Mar 2020 – Jul 2020</div>
-							<h4>Technical Specialist</h4>
-							<div class="company"><i class="fa fa-building-o"></i> Westminster International University · Tashkent, Uzbekistan</div>
-							<p>IT operations and network switching support in a university environment.</p>
+							<div class="period" data-i18n="exp.t3.period">Mar 2020 – Jul 2020</div>
+							<h4 data-i18n="exp.t3.title">Technical Specialist</h4>
+							<div class="company"><i class="fa fa-building-o"></i> <span data-i18n="exp.t3.company">Westminster International University · Tashkent, Uzbekistan</span></div>
+							<p data-i18n="exp.t3.desc">IT operations and network switching support in a university environment.</p>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Oct 2019 – Mar 2020</div>
-							<h4>RAN Engineer</h4>
-							<div class="company"><i class="fa fa-building-o"></i> ZTE Investment · Tashkent, Uzbekistan</div>
-							<p>Configuration and commissioning of new 2G/3G base stations (BBU/RRU).</p>
+							<div class="period" data-i18n="exp.t4.period">Oct 2019 – Mar 2020</div>
+							<h4 data-i18n="exp.t4.title">RAN Engineer</h4>
+							<div class="company"><i class="fa fa-building-o"></i> <span data-i18n="exp.t4.company">ZTE Investment · Tashkent, Uzbekistan</span></div>
+							<p data-i18n="exp.t4.desc">Configuration and commissioning of new 2G/3G base stations (BBU/RRU).</p>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Nov 2017 – Oct 2019</div>
-							<h4>Level 1 IT Network Support</h4>
+							<div class="period" data-i18n="exp.t5.period">Nov 2017 – Oct 2019</div>
+							<h4 data-i18n="exp.t5.title">Level 1 IT Network Support</h4>
 							<div class="company"><i class="fa fa-building-o"></i> Asia Pacific University (APU) · Kuala Lumpur, Malaysia</div>
 							<ul class="role-points">
-								<li>Configured <strong>Cisco</strong> &amp; <strong>Ruckus</strong> switches and wireless devices; general network maintenance and L1 support.</li>
-								<li>Installed CCTV/NVR and ZKTeco access-control; connected MS SQL databases to applications.</li>
-								<li>Project member for the <strong>Cisco Academy</strong> build.</li>
+								<li data-i18n-html="exp.t5.li1">Configured <strong>Cisco</strong> &amp; <strong>Ruckus</strong> switches and wireless devices; general network maintenance and L1 support.</li>
+								<li data-i18n="exp.t5.li2">Installed CCTV/NVR and ZKTeco access-control; connected MS SQL databases to applications.</li>
+								<li data-i18n-html="exp.t5.li3">Project member for the <strong>Cisco Academy</strong> build.</li>
 							</ul>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Sep 2014 – Nov 2017</div>
-							<h4>Technical Assistant</h4>
+							<div class="period" data-i18n="exp.t6.period">Sep 2014 – Nov 2017</div>
+							<h4 data-i18n="exp.t6.title">Technical Assistant</h4>
 							<div class="company"><i class="fa fa-building-o"></i> Asia Pacific University (APU) · Kuala Lumpur, Malaysia</div>
 							<ul class="role-points">
-								<li>Hardware/software setup in labs; helpdesk call handling and task assignment.</li>
-								<li>Troubleshot PC &amp; network issues; LAN cabling and access-point installation.</li>
-								<li>Quality-control checks for classrooms, auditoriums and computer labs.</li>
+								<li data-i18n="exp.t6.li1">Hardware/software setup in labs; helpdesk call handling and task assignment.</li>
+								<li data-i18n="exp.t6.li2">Troubleshot PC &amp; network issues; LAN cabling and access-point installation.</li>
+								<li data-i18n="exp.t6.li3">Quality-control checks for classrooms, auditoriums and computer labs.</li>
 							</ul>
 						</div>
 					</div>
@@ -222,17 +223,17 @@
 					<div class="timeline">
 						<div class="timeline-item">
 							<div class="period">2012 – 2016</div>
-							<h4>B.Tech — Business Information System (BIS)</h4>
-							<div class="company"><i class="fa fa-graduation-cap"></i> Asia Pacific University of Technology &amp; Innovation (APU) · Kuala Lumpur</div>
+							<h4 data-i18n="edu.t1.title">B.Tech — Business Information System (BIS)</h4>
+							<div class="company"><i class="fa fa-graduation-cap"></i> <span data-i18n="edu.t1.company">Asia Pacific University of Technology &amp; Innovation (APU) · Kuala Lumpur</span></div>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Certification</div>
-							<h4>Introduction to R</h4>
+							<div class="period" data-i18n="edu.t2.period">Certification</div>
+							<h4 data-i18n="edu.t2.title">Introduction to R</h4>
 							<div class="company"><i class="fa fa-certificate"></i> DataCamp</div>
 						</div>
 						<div class="timeline-item">
-							<div class="period">Jun 2016</div>
-							<h4>Certificate of Participation</h4>
+							<div class="period" data-i18n="edu.t3.period">Jun 2016</div>
+							<h4 data-i18n="edu.t3.title">Certificate of Participation</h4>
 							<div class="company"><i class="fa fa-certificate"></i> Maybank</div>
 						</div>
 					</div>
@@ -245,50 +246,50 @@
 		<canvas class="sec-bg" data-anim="mesh"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">Offerings</div>
-				<h2>How I can help</h2>
-				<p>End-to-end IT services — from network and servers to identity, security and automation.</p>
+				<div class="eyebrow" data-i18n="services.eyebrow">Offerings</div>
+				<h2 data-i18n="services.h2">How I can help</h2>
+				<p data-i18n="services.lead">End-to-end IT services — from network and servers to identity, security and automation.</p>
 			</div>
 			<div class="cards-grid">
 				<div class="card reveal">
 					<i class="fa fa-sitemap"></i>
-					<h4>Network &amp; Infrastructure</h4>
-					<p>Design and manage office networks — firewalls, managed switches, dual-WAN, SSL/IPsec VPN and structured cabling for solid uptime.</p>
+					<h4 data-i18n="svc.network.title">Network &amp; Infrastructure</h4>
+					<p data-i18n="svc.network.body">Design and manage office networks — firewalls, managed switches, dual-WAN, SSL/IPsec VPN and structured cabling for solid uptime.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-server"></i>
-					<h4>Server &amp; System Administration</h4>
-					<p>Windows Server, Active Directory &amp; DNS, Microsoft 365 / Google Workspace administration, and automated NAS backups for disaster recovery.</p>
+					<h4 data-i18n="svc.server.title">Server &amp; System Administration</h4>
+					<p data-i18n="svc.server.body">Windows Server, Active Directory &amp; DNS, Microsoft 365 / Google Workspace administration, and automated NAS backups for disaster recovery.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-id-badge"></i>
-					<h4>Identity &amp; Access (IAM)</h4>
-					<p>Centralized directory, SSO and user lifecycle with JumpCloud and Microsoft 365 — secure onboarding and offboarding done right.</p>
+					<h4 data-i18n="svc.iam.title">Identity &amp; Access (IAM)</h4>
+					<p data-i18n="svc.iam.body">Centralized directory, SSO and user lifecycle with JumpCloud and Microsoft 365 — secure onboarding and offboarding done right.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-shield"></i>
-					<h4>Endpoint Security &amp; MDM</h4>
-					<p>Device compliance, patch management and asset tracking across macOS &amp; Windows fleets with ManageEngine Endpoint Central and zero-trust access.</p>
+					<h4 data-i18n="svc.endpoint.title">Endpoint Security &amp; MDM</h4>
+					<p data-i18n="svc.endpoint.body">Device compliance, patch management and asset tracking across macOS &amp; Windows fleets with ManageEngine Endpoint Central and zero-trust access.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-database"></i>
-					<h4>1C / ERP Administration</h4>
-					<p>Install, configure and maintain 1C:Enterprise and ERP systems — integrations with barcode scanners, weighing terminals and reliable backups.</p>
+					<h4 data-i18n="svc.erp.title">1C / ERP Administration</h4>
+					<p data-i18n="svc.erp.body">Install, configure and maintain 1C:Enterprise and ERP systems — integrations with barcode scanners, weighing terminals and reliable backups.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-phone"></i>
-					<h4>IP Telephony &amp; CCTV</h4>
-					<p>Deploy and manage Yeastar IP PBX / VoIP endpoints and CCTV/NVR surveillance for connected, secure premises.</p>
+					<h4 data-i18n="svc.telephony.title">IP Telephony &amp; CCTV</h4>
+					<p data-i18n="svc.telephony.body">Deploy and manage Yeastar IP PBX / VoIP endpoints and CCTV/NVR surveillance for connected, secure premises.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-comments"></i>
-					<h4>Telegram Bot Development</h4>
-					<p>Build custom Telegram bots for automation, notifications, internal tooling and customer interaction.</p>
+					<h4 data-i18n="svc.telegram.title">Telegram Bot Development</h4>
+					<p data-i18n="svc.telegram.body">Build custom Telegram bots for automation, notifications, internal tooling and customer interaction.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-life-ring"></i>
-					<h4>IT Support &amp; Service Desk</h4>
-					<p>Tier 2/3 support with clear SLAs and root-cause analysis through Jira Service Management — issues resolved and documented.</p>
+					<h4 data-i18n="svc.support.title">IT Support &amp; Service Desk</h4>
+					<p data-i18n="svc.support.body">Tier 2/3 support with clear SLAs and root-cause analysis through Jira Service Management — issues resolved and documented.</p>
 				</div>
 			</div>
 		</div>
@@ -298,9 +299,9 @@
 		<canvas class="sec-bg" data-anim="signal"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">Let's talk</div>
-				<h2>Get in touch</h2>
-				<p>Have a project, opportunity, or just want to say hi? Send me a message.</p>
+				<div class="eyebrow" data-i18n="contact.eyebrow">Let's talk</div>
+				<h2 data-i18n="contact.h2">Get in touch</h2>
+				<p data-i18n="contact.lead">Have a project, opportunity, or just want to say hi? Send me a message.</p>
 			</div>
 			<div class="contact-grid">
 				<div class="reveal">
@@ -308,7 +309,7 @@
 						<li><i class="fa fa-envelope"></i> gaffarovoybek21@gmail.com</li>
 						<li><i class="fa fa-phone"></i> +998 93 008 5860</li>
 						<li><i class="fa fa-mobile"></i> +601 12 374 1353</li>
-						<li><i class="fa fa-map-marker"></i> Available worldwide / remote</li>
+						<li><i class="fa fa-map-marker"></i> <span data-i18n="contact.remote">Available worldwide / remote</span></li>
 					</ul>
 					<div class="social-row">
 						<a href="https://ru-ru.facebook.com/oybek.gaffarov" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
@@ -319,12 +320,12 @@
 				<div class="reveal">
 					<form class="contact-form" id="contactForm">
 						<div class="form-row">
-							<input type="text" name="name" placeholder="Your name" required minlength="2">
-							<input type="email" name="email" placeholder="Your email" required>
+							<input type="text" name="name" placeholder="Your name" data-i18n-ph="form.name" required minlength="2">
+							<input type="email" name="email" placeholder="Your email" data-i18n-ph="form.email" required>
 						</div>
-						<input type="text" name="subject" placeholder="Subject" required minlength="4">
-						<textarea name="message" placeholder="Your message" required minlength="20"></textarea>
-						<button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send message</button>
+						<input type="text" name="subject" placeholder="Subject" data-i18n-ph="form.subject" required minlength="4">
+						<textarea name="message" placeholder="Your message" data-i18n-ph="form.message" required minlength="20"></textarea>
+						<button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> <span data-i18n="form.send">Send message</span></button>
 						<div id="form-status"></div>
 					</form>
 				</div>
@@ -339,12 +340,13 @@
 				<a href="https://www.instagram.com/ogaffarov/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
 				<a href="https://my.linkedin.com/in/oybek21" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 			</div>
-			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. All rights reserved.</p>
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. <span data-i18n="footer.rights">All rights reserved.</span></p>
 		</div>
 	</footer>
 
 	<button class="to-top" aria-label="Back to top"><i class="fa fa-angle-up"></i></button>
 
+	<script src="js/i18n.js"></script>
 	<script src="js/modern.js"></script>
 </body>
 </html>

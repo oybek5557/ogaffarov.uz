@@ -28,12 +28,13 @@
 		<div class="container">
 			<a href="index.html" class="brand">Oybek<span>.</span></a>
 			<ul class="nav-links">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="about-us.html">About</a></li>
-				<li><a href="services.html" class="active">Services</a></li>
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="index.html" data-i18n="nav.home">Home</a></li>
+				<li><a href="about-us.html" data-i18n="nav.about">About</a></li>
+				<li><a href="services.html" class="active" data-i18n="nav.services">Services</a></li>
+				<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
 			</ul>
 			<div class="nav-actions">
+				<button class="lang-toggle" aria-label="Toggle language">EN</button>
 				<button class="theme-toggle" aria-label="Toggle theme"><i class="fa fa-sun-o"></i></button>
 				<button class="nav-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
 			</div>
@@ -42,8 +43,8 @@
 
 	<header class="page-banner">
 		<div class="container">
-			<h1>Services</h1>
-			<div class="breadcrumb-nav"><a href="index.html">Home</a><span>/</span><span>Services</span></div>
+			<h1 data-i18n="banner.services">Services</h1>
+			<div class="breadcrumb-nav"><a href="index.html" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="nav.services">Services</span></div>
 		</div>
 	</header>
 
@@ -51,50 +52,50 @@
 		<canvas class="sec-bg" data-anim="mesh"></canvas>
 		<div class="container">
 			<div class="section-head reveal">
-				<div class="eyebrow">What I offer</div>
-				<h2>Offerings to my clients</h2>
-				<p>End-to-end IT services — from network and servers to identity, security and automation.</p>
+				<div class="eyebrow" data-i18n="services.eyebrow">What I offer</div>
+				<h2 data-i18n="services2.h2">Offerings to my clients</h2>
+				<p data-i18n="services.lead">End-to-end IT services — from network and servers to identity, security and automation.</p>
 			</div>
 			<div class="cards-grid">
 				<div class="card reveal">
 					<i class="fa fa-sitemap"></i>
-					<h4>Network &amp; Infrastructure</h4>
-					<p>Design and manage office networks — firewalls, managed switches, dual-WAN, SSL/IPsec VPN and structured cabling for solid uptime.</p>
+					<h4 data-i18n="svc.network.title">Network &amp; Infrastructure</h4>
+					<p data-i18n="svc.network.body">Design and manage office networks — firewalls, managed switches, dual-WAN, SSL/IPsec VPN and structured cabling for solid uptime.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-server"></i>
-					<h4>Server &amp; System Administration</h4>
-					<p>Windows Server, Active Directory &amp; DNS, Microsoft 365 / Google Workspace administration, and automated NAS backups.</p>
+					<h4 data-i18n="svc2.server.title">Server &amp; System Administration</h4>
+					<p data-i18n="svc2.server.body">Windows Server, Active Directory &amp; DNS, Microsoft 365 / Google Workspace administration, and automated NAS backups.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-id-badge"></i>
-					<h4>Identity &amp; Access (IAM)</h4>
-					<p>Centralized directory, SSO and user lifecycle with JumpCloud and Microsoft 365 — secure onboarding and offboarding.</p>
+					<h4 data-i18n="svc2.iam.title">Identity &amp; Access (IAM)</h4>
+					<p data-i18n="svc2.iam.body">Centralized directory, SSO and user lifecycle with JumpCloud and Microsoft 365 — secure onboarding and offboarding.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-shield"></i>
-					<h4>Endpoint Security &amp; MDM</h4>
-					<p>Device compliance, patch management and asset tracking across macOS &amp; Windows fleets with zero-trust access.</p>
+					<h4 data-i18n="svc2.endpoint.title">Endpoint Security &amp; MDM</h4>
+					<p data-i18n="svc2.endpoint.body">Device compliance, patch management and asset tracking across macOS &amp; Windows fleets with zero-trust access.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-database"></i>
-					<h4>1C / ERP Administration</h4>
-					<p>Install, configure and maintain 1C:Enterprise and ERP systems, with integrations and reliable backups.</p>
+					<h4 data-i18n="svc2.erp.title">1C / ERP Administration</h4>
+					<p data-i18n="svc2.erp.body">Install, configure and maintain 1C:Enterprise and ERP systems, with integrations and reliable backups.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-phone"></i>
-					<h4>IP Telephony &amp; CCTV</h4>
-					<p>Deploy and manage Yeastar IP PBX / VoIP endpoints and CCTV/NVR surveillance for secure premises.</p>
+					<h4 data-i18n="svc2.telephony.title">IP Telephony &amp; CCTV</h4>
+					<p data-i18n="svc2.telephony.body">Deploy and manage Yeastar IP PBX / VoIP endpoints and CCTV/NVR surveillance for secure premises.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-comments"></i>
-					<h4>Telegram Bot Development</h4>
-					<p>Build custom Telegram bots for automation, notifications, internal tooling and customer interaction.</p>
+					<h4 data-i18n="svc.telegram.title">Telegram Bot Development</h4>
+					<p data-i18n="svc.telegram.body">Build custom Telegram bots for automation, notifications, internal tooling and customer interaction.</p>
 				</div>
 				<div class="card reveal">
 					<i class="fa fa-life-ring"></i>
-					<h4>IT Support &amp; Service Desk</h4>
-					<p>Tier 2/3 support with clear SLAs and root-cause analysis through Jira Service Management.</p>
+					<h4 data-i18n="svc2.support.title">IT Support &amp; Service Desk</h4>
+					<p data-i18n="svc2.support.body">Tier 2/3 support with clear SLAs and root-cause analysis through Jira Service Management.</p>
 				</div>
 			</div>
 		</div>
@@ -104,11 +105,11 @@
 		<canvas class="sec-bg" data-anim="mesh"></canvas>
 		<div class="container">
 			<div class="section-head reveal" style="text-align:center;margin-bottom:28px;">
-				<h2>Have an IT challenge?</h2>
-				<p style="margin:0 auto;">Let's talk about how I can help with your infrastructure, security or systems.</p>
+				<h2 data-i18n="services2.cta.h2">Have an IT challenge?</h2>
+				<p style="margin:0 auto;" data-i18n="services2.cta.p">Let's talk about how I can help with your infrastructure, security or systems.</p>
 			</div>
 			<div class="reveal" style="text-align:center;">
-				<a href="contact.html" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Get in touch</a>
+				<a href="contact.html" class="btn btn-primary"><i class="fa fa-paper-plane"></i> <span data-i18n="hero.btn.contact">Get in touch</span></a>
 			</div>
 		</div>
 	</section>
@@ -120,11 +121,12 @@
 				<a href="https://www.instagram.com/ogaffarov/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
 				<a href="https://my.linkedin.com/in/oybek21" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 			</div>
-			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. All rights reserved.</p>
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Oybek Gaffarov. <span data-i18n="footer.rights">All rights reserved.</span></p>
 		</div>
 	</footer>
 
 	<button class="to-top" aria-label="Back to top"><i class="fa fa-angle-up"></i></button>
+	<script src="js/i18n.js"></script>
 	<script src="js/modern.js"></script>
 </body>
 </html>

@@ -138,21 +138,33 @@
   // Typing effect for role text
   var roleEl = document.getElementById('typed-role');
   if(roleEl){
-    var roles = JSON.parse(roleEl.getAttribute('data-roles') || '[]');
-    var ri = 0, ci = 0, deleting = false;
-    function tick(){
-      var word = roles[ri] || '';
-      if(!deleting){
-        ci++;
-        if(ci > word.length){ deleting = true; setTimeout(tick, 1400); return; }
-      } else {
-        ci--;
-        if(ci < 0){ deleting = false; ri = (ri + 1) % roles.length; ci = 0; }
-      }
-      roleEl.textContent = word.slice(0, Math.max(ci,0));
-      setTimeout(tick, deleting ? 45 : 90);
+    var roleGen = 0;
+    function getRoles(){
+      var lang = localStorage.getItem('site-lang') || 'en';
+      var attr = lang === 'ru' ? 'data-roles-ru' : 'data-roles';
+      return JSON.parse(roleEl.getAttribute(attr) || roleEl.getAttribute('data-roles') || '[]');
     }
-    if(roles.length) tick();
+    function startTyping(){
+      var myGen = ++roleGen;
+      var roles = getRoles();
+      var ri = 0, ci = 0, deleting = false;
+      function tick(){
+        if(myGen !== roleGen) return;
+        var word = roles[ri] || '';
+        if(!deleting){
+          ci++;
+          if(ci > word.length){ deleting = true; setTimeout(tick, 1400); return; }
+        } else {
+          ci--;
+          if(ci < 0){ deleting = false; ri = (ri + 1) % roles.length; ci = 0; }
+        }
+        roleEl.textContent = word.slice(0, Math.max(ci,0));
+        setTimeout(tick, deleting ? 45 : 90);
+      }
+      if(roles.length) tick();
+    }
+    startTyping();
+    document.addEventListener('site-lang-changed', startTyping);
   }
 
   // Tabs (experience / education)
