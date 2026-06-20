@@ -240,6 +240,172 @@
     window.addEventListener('resize', resizeNet);
   }
 
+  // Themed animated section backgrounds (canvas)
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var A = '91,140,255';   // accent
+    var B = '126,224,195';  // accent-2
+
+    function initSecBg(canvas){
+      var mode = canvas.getAttribute('data-anim');
+      var ctx = canvas.getContext('2d');
+      var W = 0, H = 0, t = 0, running = false, state = {};
+
+      function setup(){
+        if(mode === 'server'){
+          var cols = Math.max(8, Math.floor(W / 22));
+          state.cols = [];
+          for(var i = 0; i < cols; i++){
+            state.cols.push({ x: i * 22 + 11, y: Math.random() * H, speed: 1 + Math.random() * 1.8 });
+          }
+        } else if(mode === 'bars'){
+          var n = Math.max(10, Math.floor(W / 46));
+          state.bars = [];
+          for(var b = 0; b < n; b++){
+            state.bars.push({ phase: Math.random() * Math.PI * 2, speed: 0.6 + Math.random() * 1.2 });
+          }
+          state.n = n;
+        } else if(mode === 'timeline'){
+          var tracks = 4;
+          state.tracks = [];
+          for(var tr = 0; tr < tracks; tr++){
+            var y = H * (tr + 1) / (tracks + 1);
+            var dots = [];
+            var count = Math.max(4, Math.floor(W / 160));
+            for(var d = 0; d < count; d++){
+              dots.push({ x: Math.random() * W, r: 2 + Math.random() * 2 });
+            }
+            state.tracks.push({ y: y, dots: dots, speed: 0.3 + tr * 0.18 });
+          }
+        } else if(mode === 'mesh'){
+          var gap = 54;
+          state.gap = gap;
+          state.cols2 = Math.ceil(W / gap) + 1;
+          state.rows2 = Math.ceil(H / gap) + 1;
+          state.ripples = [];
+        } else if(mode === 'signal'){
+          state.ripples = [];
+          state.ox = W * 0.18;
+          state.oy = H * 0.5;
+        }
+      }
+
+      function resize(){
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+        setup();
+      }
+
+      function draw(){
+        t++;
+        ctx.clearRect(0, 0, W, H);
+
+        if(mode === 'server'){
+          ctx.font = '14px monospace';
+          state.cols.forEach(function(c){
+            c.y += c.speed;
+            if(c.y - 90 > H) c.y = -Math.random() * 80;
+            for(var k = 0; k < 7; k++){
+              var yy = c.y - k * 14;
+              if(yy < 0 || yy > H) continue;
+              var alpha = (1 - k / 7) * 0.7;
+              ctx.fillStyle = 'rgba(' + (k === 0 ? B : A) + ',' + alpha + ')';
+              ctx.fillText(Math.random() > 0.5 ? '1' : '0', c.x, yy);
+            }
+          });
+        } else if(mode === 'bars'){
+          var bw = W / state.n;
+          for(var i = 0; i < state.n; i++){
+            var bar = state.bars[i];
+            var h = (0.2 + 0.8 * (0.5 + 0.5 * Math.sin(t * 0.02 * bar.speed + bar.phase))) * H * 0.55;
+            var x = i * bw + bw * 0.2;
+            var w = bw * 0.6;
+            var grad = ctx.createLinearGradient(0, H, 0, H - h);
+            grad.addColorStop(0, 'rgba(' + A + ',0.10)');
+            grad.addColorStop(1, 'rgba(' + B + ',0.55)');
+            ctx.fillStyle = grad;
+            ctx.fillRect(x, H - h, w, h);
+          }
+        } else if(mode === 'timeline'){
+          state.tracks.forEach(function(tk){
+            ctx.strokeStyle = 'rgba(' + A + ',0.10)';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(0, tk.y); ctx.lineTo(W, tk.y); ctx.stroke();
+            tk.dots.forEach(function(dot){
+              dot.x += tk.speed;
+              if(dot.x > W + 10) dot.x = -10;
+            });
+            for(var j = 0; j < tk.dots.length; j++){
+              var dt = tk.dots[j];
+              if(j > 0){
+                var prev = tk.dots[j - 1];
+                if(Math.abs(dt.x - prev.x) < 200){
+                  ctx.strokeStyle = 'rgba(' + A + ',0.18)';
+                  ctx.beginPath(); ctx.moveTo(prev.x, tk.y); ctx.lineTo(dt.x, tk.y); ctx.stroke();
+                }
+              }
+              ctx.fillStyle = 'rgba(' + B + ',0.7)';
+              ctx.beginPath(); ctx.arc(dt.x, tk.y, dt.r, 0, Math.PI * 2); ctx.fill();
+            }
+          });
+        } else if(mode === 'mesh'){
+          if(t % 80 === 0 || state.ripples.length === 0){
+            state.ripples.push({
+              x: Math.random() * W, y: Math.random() * H, r: 0, max: 220 + Math.random() * 120
+            });
+          }
+          state.ripples = state.ripples.filter(function(r){ return r.r < r.max; });
+          state.ripples.forEach(function(r){ r.r += 1.6; });
+          for(var cx = 0; cx < state.cols2; cx++){
+            for(var cy = 0; cy < state.rows2; cy++){
+              var px = cx * state.gap, py = cy * state.gap;
+              var bright = 0;
+              state.ripples.forEach(function(r){
+                var d = Math.abs(Math.sqrt((px - r.x) * (px - r.x) + (py - r.y) * (py - r.y)) - r.r);
+                if(d < 24) bright = Math.max(bright, (1 - d / 24) * (1 - r.r / r.max));
+              });
+              ctx.fillStyle = 'rgba(' + (bright > 0.1 ? B : A) + ',' + (0.12 + bright * 0.7) + ')';
+              ctx.beginPath(); ctx.arc(px, py, 1.6 + bright * 2.5, 0, Math.PI * 2); ctx.fill();
+            }
+          }
+        } else if(mode === 'signal'){
+          if(t % 70 === 0 || state.ripples.length === 0){
+            state.ripples.push({ r: 0, max: Math.max(W, H) });
+          }
+          state.ripples = state.ripples.filter(function(r){ return r.r < r.max; });
+          state.ripples.forEach(function(r){
+            r.r += 1.8;
+            var alpha = (1 - r.r / r.max) * 0.4;
+            ctx.strokeStyle = 'rgba(' + A + ',' + alpha + ')';
+            ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.arc(state.ox, state.oy, r.r, 0, Math.PI * 2); ctx.stroke();
+          });
+          var pulse = 4 + 2 * Math.sin(t * 0.08);
+          ctx.fillStyle = 'rgba(' + B + ',0.8)';
+          ctx.beginPath(); ctx.arc(state.ox, state.oy, pulse, 0, Math.PI * 2); ctx.fill();
+        }
+
+        if(running) requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+
+      function start(){ if(!running){ running = true; requestAnimationFrame(draw); } }
+      function stop(){ running = false; }
+
+      if(reduce){ draw(); return; } // single static frame
+
+      // Only animate while in view
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ e.isIntersecting ? start() : stop(); });
+      }, {threshold:0.02});
+      io.observe(canvas);
+    }
+
+    document.querySelectorAll('.sec-bg').forEach(initSecBg);
+  })();
+
   // Contact form (AJAX submit to contact_process.php)
   var form = document.getElementById('contactForm');
   if(form){
