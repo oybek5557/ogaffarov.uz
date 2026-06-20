@@ -47,8 +47,21 @@
     });
     var toTop = document.querySelector('.to-top');
     if(toTop) toTop.classList.toggle('show', window.scrollY > 400);
+
+    // Scroll progress bar
+    var progress = document.querySelector('.scroll-progress');
+    if(progress){
+      var h = document.documentElement;
+      var scrolled = (h.scrollTop || document.body.scrollTop);
+      var height = (h.scrollHeight - h.clientHeight) || 1;
+      progress.style.width = (scrolled / height * 100) + '%';
+    }
+
+    // Nav shrink
+    var nav = document.querySelector('.nav');
+    if(nav) nav.classList.toggle('scrolled', window.scrollY > 30);
   }
-  window.addEventListener('scroll', onScroll);
+  window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
   // Back to top
@@ -59,7 +72,7 @@
     });
   }
 
-  // Reveal on scroll
+  // Reveal on scroll (with stagger for grouped children)
   var revealEls = document.querySelectorAll('.reveal');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
@@ -68,8 +81,40 @@
         io.unobserve(entry.target);
       }
     });
-  }, {threshold:0.15});
+  }, {threshold:0.12});
   revealEls.forEach(function(el){ io.observe(el); });
+
+  // Stagger any group of cards/items by giving each a transition delay
+  ['.cards-grid', '.tag-cloud', '.facts', '.stats-grid'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(group){
+      Array.prototype.forEach.call(group.children, function(child, i){
+        child.style.transitionDelay = (i * 70) + 'ms';
+      });
+    });
+  });
+
+  // Animated number counters (stat cards)
+  var counters = document.querySelectorAll('.stat-card .num');
+  var countIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      var raw = el.textContent.trim();
+      var num = parseInt(raw.replace(/\D/g, ''), 10) || 0;
+      var suffix = raw.replace(/[0-9]/g, '');
+      var start = null, dur = 1400;
+      function step(ts){
+        if(!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(num * eased) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      countIo.unobserve(el);
+    });
+  }, {threshold:0.5});
+  counters.forEach(function(c){ countIo.observe(c); });
 
   // Animated skill bars
   var bars = document.querySelectorAll('.bar span');
