@@ -258,13 +258,25 @@
           for(var i = 0; i < cols; i++){
             state.cols.push({ x: i * 22 + 11, y: Math.random() * H, speed: 1 + Math.random() * 1.8 });
           }
-        } else if(mode === 'bars'){
-          var n = Math.max(10, Math.floor(W / 46));
-          state.bars = [];
-          for(var b = 0; b < n; b++){
-            state.bars.push({ phase: Math.random() * Math.PI * 2, speed: 0.6 + Math.random() * 1.2 });
+        } else if(mode === 'orbit'){
+          state.cx = W * 0.5;
+          state.cy = H * 0.5;
+          var ringCount = 4;
+          state.rings = [];
+          var base = Math.min(W, H) * 0.12;
+          for(var r = 0; r < ringCount; r++){
+            var radius = base + r * (Math.min(W, H) * 0.11);
+            var dotN = 3 + r;
+            var dots = [];
+            for(var dd = 0; dd < dotN; dd++){
+              dots.push({ a: (Math.PI * 2 / dotN) * dd + Math.random() });
+            }
+            state.rings.push({
+              radius: radius,
+              dots: dots,
+              speed: (0.003 + r * 0.0014) * (r % 2 === 0 ? 1 : -1)
+            });
           }
-          state.n = n;
         } else if(mode === 'timeline'){
           var tracks = 4;
           state.tracks = [];
@@ -313,19 +325,31 @@
               ctx.fillText(Math.random() > 0.5 ? '1' : '0', c.x, yy);
             }
           });
-        } else if(mode === 'bars'){
-          var bw = W / state.n;
-          for(var i = 0; i < state.n; i++){
-            var bar = state.bars[i];
-            var h = (0.2 + 0.8 * (0.5 + 0.5 * Math.sin(t * 0.02 * bar.speed + bar.phase))) * H * 0.55;
-            var x = i * bw + bw * 0.2;
-            var w = bw * 0.6;
-            var grad = ctx.createLinearGradient(0, H, 0, H - h);
-            grad.addColorStop(0, 'rgba(' + A + ',0.10)');
-            grad.addColorStop(1, 'rgba(' + B + ',0.55)');
-            ctx.fillStyle = grad;
-            ctx.fillRect(x, H - h, w, h);
-          }
+        } else if(mode === 'orbit'){
+          state.rings.forEach(function(ring){
+            // ring path
+            ctx.strokeStyle = 'rgba(' + A + ',0.10)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(state.cx, state.cy, ring.radius, 0, Math.PI * 2);
+            ctx.stroke();
+            // orbiting dots
+            ring.dots.forEach(function(dot){
+              dot.a += ring.speed;
+              var px = state.cx + Math.cos(dot.a) * ring.radius;
+              var py = state.cy + Math.sin(dot.a) * ring.radius;
+              ctx.fillStyle = 'rgba(' + B + ',0.7)';
+              ctx.beginPath();
+              ctx.arc(px, py, 3, 0, Math.PI * 2);
+              ctx.fill();
+            });
+          });
+          // center glow
+          var pulse = 5 + 2 * Math.sin(t * 0.05);
+          ctx.fillStyle = 'rgba(' + A + ',0.5)';
+          ctx.beginPath();
+          ctx.arc(state.cx, state.cy, pulse, 0, Math.PI * 2);
+          ctx.fill();
         } else if(mode === 'timeline'){
           state.tracks.forEach(function(tk){
             ctx.strokeStyle = 'rgba(' + A + ',0.10)';
