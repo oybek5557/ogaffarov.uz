@@ -148,17 +148,34 @@ section{padding:96px 0;}
 .bar{height:8px;border-radius:99px;background:var(--border);overflow:hidden;}
 .bar span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 1.2s ease;}
 
+/* Skill tag cloud */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;}
+.tag-cloud span{
+  font-size:.82rem;color:var(--text-dim);background:var(--card);border:1px solid var(--border);
+  padding:7px 14px;border-radius:999px;transition:all .2s ease;cursor:default;
+}
+.tag-cloud span:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px);}
+
 /* Timeline */
-.timeline{position:relative;padding-left:28px;border-left:2px solid var(--border);}
-.timeline-item{position:relative;padding-bottom:36px;}
+.timeline{position:relative;padding-left:30px;border-left:2px solid var(--border);}
+.timeline-item{position:relative;padding-bottom:40px;}
 .timeline-item:last-child{padding-bottom:0;}
 .timeline-item::before{
-  content:"";position:absolute;left:-35px;top:4px;width:12px;height:12px;border-radius:50%;
-  background:var(--accent);border:3px solid var(--bg);
+  content:"";position:absolute;left:-37px;top:4px;width:12px;height:12px;border-radius:50%;
+  background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 4px rgba(91,140,255,.15);
 }
-.timeline-item .period{font-size:.78rem;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
-.timeline-item h4{margin:6px 0 4px;font-size:1.05rem;}
-.timeline-item p{margin:0;color:var(--text-dim);font-size:.92rem;}
+.timeline-item .period{
+  display:inline-block;font-size:.74rem;color:var(--accent);font-weight:600;text-transform:uppercase;
+  letter-spacing:.5px;background:rgba(91,140,255,.1);padding:4px 12px;border-radius:999px;
+}
+.timeline-item h4{margin:10px 0 4px;font-size:1.08rem;}
+.timeline-item .company{color:var(--text-dim);font-size:.86rem;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.timeline-item .company i{color:var(--accent);}
+.timeline-item p{margin:0 0 8px;color:var(--text-dim);font-size:.92rem;line-height:1.6;}
+.role-points{margin:8px 0 0;padding-left:0;list-style:none;display:grid;gap:7px;}
+.role-points li{position:relative;padding-left:22px;color:var(--text-dim);font-size:.9rem;line-height:1.55;}
+.role-points li::before{content:"\f00c";font-family:FontAwesome;position:absolute;left:0;top:1px;color:var(--accent-2);font-size:.78rem;}
+.role-points strong{color:var(--text);font-weight:600;}
 
 .tabs{display:flex;gap:10px;margin-bottom:32px;}
 .tab-btn{
