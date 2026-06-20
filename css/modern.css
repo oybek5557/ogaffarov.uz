@@ -155,37 +155,100 @@ section{padding:96px 0;}
 
 .bg-soft{background:var(--bg-soft);}
 
-/* Per-section cohesive background tints (subtle, accent-based) */
-section[id]{position:relative;}
-#about{background:
-  radial-gradient(circle at 85% 15%,rgba(91,140,255,.10),transparent 45%),
-  var(--bg-soft);}
-#skills{background:
-  radial-gradient(circle at 12% 20%,rgba(126,224,195,.09),transparent 45%),
-  var(--bg);}
-#experience{background:
-  radial-gradient(circle at 90% 80%,rgba(126,224,195,.10),transparent 50%),
-  var(--bg-soft);}
-#services{background:
-  radial-gradient(circle at 15% 85%,rgba(91,140,255,.10),transparent 48%),
-  var(--bg);}
-#contact{background:
-  radial-gradient(circle at 80% 20%,rgba(91,140,255,.10),transparent 45%),
-  radial-gradient(circle at 15% 90%,rgba(126,224,195,.08),transparent 45%),
-  var(--bg-soft);}
+/* Per-section animated backgrounds — distinct motion per section, same palette */
+section[id]{position:relative;overflow:hidden;}
+section[id]::before,section[id]::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;}
 
-/* Inner-page section tints (match the home-page sections) */
-.page-about section{background:
-  radial-gradient(circle at 85% 15%,rgba(91,140,255,.08),transparent 45%),var(--bg);}
-.page-about section.bg-soft{background:
-  radial-gradient(circle at 12% 20%,rgba(126,224,195,.09),transparent 45%),var(--bg-soft);}
-.page-services section{background:
-  radial-gradient(circle at 15% 85%,rgba(91,140,255,.09),transparent 48%),var(--bg);}
-.page-services section.bg-soft{background:
-  radial-gradient(circle at 90% 80%,rgba(126,224,195,.10),transparent 50%),var(--bg-soft);}
-.page-contact section{background:
-  radial-gradient(circle at 80% 20%,rgba(91,140,255,.09),transparent 45%),
-  radial-gradient(circle at 15% 90%,rgba(126,224,195,.08),transparent 45%),var(--bg);}
+#about{background:var(--bg-soft);}
+#about::before{
+  width:340px;height:340px;background:rgba(91,140,255,.16);top:-80px;right:-60px;
+  animation:driftA 16s ease-in-out infinite;
+}
+#about::after{
+  width:260px;height:260px;background:rgba(126,224,195,.12);bottom:-70px;left:10%;
+  animation:driftA 20s ease-in-out infinite reverse;
+}
+@keyframes driftA{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,30px) scale(1.12);}}
+
+#skills{background:
+  linear-gradient(rgba(91,140,255,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(91,140,255,.05) 1px,transparent 1px),
+  var(--bg);
+  background-size:42px 42px;
+  animation:gridPan 22s linear infinite;
+}
+@keyframes gridPan{0%{background-position:0 0,0 0;}100%{background-position:420px 0,0 420px;}}
+
+#experience{background:var(--bg-soft);}
+#experience::before{
+  width:420px;height:420px;background:rgba(126,224,195,.14);top:-120px;left:-100px;
+  animation:pulseB 9s ease-in-out infinite;
+}
+#experience::after{
+  width:300px;height:300px;background:rgba(91,140,255,.12);bottom:-100px;right:-60px;
+  animation:pulseB 12s ease-in-out infinite reverse;
+}
+@keyframes pulseB{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.25);opacity:1;}}
+
+#services{background:var(--bg);}
+#services::before{
+  width:300px;height:300px;background:rgba(91,140,255,.14);top:10%;right:-80px;
+  animation:diagonalC 17s ease-in-out infinite;
+}
+#services::after{
+  width:240px;height:240px;background:rgba(126,224,195,.13);bottom:5%;left:-60px;
+  animation:diagonalC 21s ease-in-out infinite reverse;
+}
+@keyframes diagonalC{0%,100%{transform:translate(0,0);}50%{transform:translate(50px,50px);}}
+
+#contact{
+  background:linear-gradient(120deg,var(--bg-soft) 0%,rgba(91,140,255,.08) 30%,var(--bg-soft) 50%,rgba(126,224,195,.07) 70%,var(--bg-soft) 100%);
+  background-size:300% 300%;
+  animation:waveD 14s ease-in-out infinite;
+}
+@keyframes waveD{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+
+/* Inner-page section animated backgrounds (reuse the home-page motion set) */
+.page-about section{position:relative;overflow:hidden;background:var(--bg);}
+.page-about section::before{
+  content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;
+  width:340px;height:340px;background:rgba(91,140,255,.16);top:-80px;right:-60px;
+  animation:driftA 16s ease-in-out infinite;
+}
+.page-about section::after{
+  content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;
+  width:260px;height:260px;background:rgba(126,224,195,.12);bottom:-70px;left:10%;
+  animation:driftA 20s ease-in-out infinite reverse;
+}
+.page-about section.bg-soft{background:var(--bg-soft);}
+.page-about section.bg-soft::before{
+  width:420px;height:420px;background:rgba(126,224,195,.14);top:-120px;left:-100px;right:auto;
+  animation:pulseB 9s ease-in-out infinite;
+}
+.page-about section.bg-soft::after{
+  width:300px;height:300px;background:rgba(91,140,255,.12);bottom:-100px;right:-60px;left:auto;
+  animation:pulseB 12s ease-in-out infinite reverse;
+}
+
+.page-services section{position:relative;overflow:hidden;background:var(--bg);}
+.page-services section::before{
+  content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;
+  width:300px;height:300px;background:rgba(91,140,255,.14);top:10%;right:-80px;
+  animation:diagonalC 17s ease-in-out infinite;
+}
+.page-services section::after{
+  content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;
+  width:240px;height:240px;background:rgba(126,224,195,.13);bottom:5%;left:-60px;
+  animation:diagonalC 21s ease-in-out infinite reverse;
+}
+.page-services section.bg-soft{background:var(--bg-soft);}
+
+.page-contact section{
+  position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--bg) 0%,rgba(91,140,255,.08) 30%,var(--bg) 50%,rgba(126,224,195,.07) 70%,var(--bg) 100%);
+  background-size:300% 300%;
+  animation:waveD 14s ease-in-out infinite;
+}
 
 /* About grid */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
