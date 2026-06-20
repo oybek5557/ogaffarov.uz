@@ -125,14 +125,15 @@
       status.textContent = 'Sending...';
       status.className = '';
       fetch('contact_process.php', { method: 'POST', body: data })
-        .then(function(res){
-          if(!res.ok) throw new Error('fail');
-          status.textContent = 'Thanks! Your message has been sent.';
+        .then(function(res){ return res.json().then(function(json){ return { ok: res.ok, json: json }; }); })
+        .then(function(result){
+          if(!result.ok || !result.json.success) throw new Error(result.json.message || 'fail');
+          status.textContent = result.json.message;
           status.className = 'ok';
           form.reset();
         })
-        .catch(function(){
-          status.textContent = 'Something went wrong. Please email me directly instead.';
+        .catch(function(err){
+          status.textContent = err.message || 'Something went wrong. Please email me directly instead.';
           status.className = 'err';
         });
     });
