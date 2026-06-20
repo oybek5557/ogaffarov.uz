@@ -136,7 +136,8 @@ section{padding:96px 0;}
 }
 .hero-portrait img{width:100%;height:100%;object-fit:cover;}
 .hero-portrait .badge{
-  position:absolute;bottom:10px;right:0;background:var(--card);border:1px solid var(--border);
+  position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;
+  background:var(--card);border:1px solid var(--border);z-index:3;
   border-radius:999px;padding:10px 16px;font-size:.8rem;font-weight:600;box-shadow:var(--shadow);
   display:flex;align-items:center;gap:8px;
 }
@@ -153,6 +154,38 @@ section{padding:96px 0;}
 .section-head p{color:var(--text-dim);max-width:560px;}
 
 .bg-soft{background:var(--bg-soft);}
+
+/* Per-section cohesive background tints (subtle, accent-based) */
+section[id]{position:relative;}
+#about{background:
+  radial-gradient(circle at 85% 15%,rgba(91,140,255,.10),transparent 45%),
+  var(--bg-soft);}
+#skills{background:
+  radial-gradient(circle at 12% 20%,rgba(126,224,195,.09),transparent 45%),
+  var(--bg);}
+#experience{background:
+  radial-gradient(circle at 90% 80%,rgba(126,224,195,.10),transparent 50%),
+  var(--bg-soft);}
+#services{background:
+  radial-gradient(circle at 15% 85%,rgba(91,140,255,.10),transparent 48%),
+  var(--bg);}
+#contact{background:
+  radial-gradient(circle at 80% 20%,rgba(91,140,255,.10),transparent 45%),
+  radial-gradient(circle at 15% 90%,rgba(126,224,195,.08),transparent 45%),
+  var(--bg-soft);}
+
+/* Inner-page section tints (match the home-page sections) */
+.page-about section{background:
+  radial-gradient(circle at 85% 15%,rgba(91,140,255,.08),transparent 45%),var(--bg);}
+.page-about section.bg-soft{background:
+  radial-gradient(circle at 12% 20%,rgba(126,224,195,.09),transparent 45%),var(--bg-soft);}
+.page-services section{background:
+  radial-gradient(circle at 15% 85%,rgba(91,140,255,.09),transparent 48%),var(--bg);}
+.page-services section.bg-soft{background:
+  radial-gradient(circle at 90% 80%,rgba(126,224,195,.10),transparent 50%),var(--bg-soft);}
+.page-contact section{background:
+  radial-gradient(circle at 80% 20%,rgba(91,140,255,.09),transparent 45%),
+  radial-gradient(circle at 15% 90%,rgba(126,224,195,.08),transparent 45%),var(--bg);}
 
 /* About grid */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
