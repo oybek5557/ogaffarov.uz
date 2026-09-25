@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oybek Gaffarov — CV</title>
+<meta name="robots" content="noindex">
+<style>
+  @page { size: A4; margin: 14mm 14mm 12mm; }
+
+  :root{
+    --ink:#14181f;
+    --muted:#5a6473;
+    --line:#d8dde5;
+    --accent:#2f5bd0;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:10.2pt;
+    line-height:1.45;
+    color:var(--ink);
+    background:#fff;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .sheet{ max-width:190mm; margin:0 auto; padding:10mm 0; }
+
+  header{ border-bottom:2px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  h1{ margin:0; font-size:21pt; letter-spacing:-.4px; }
+  .subtitle{ margin:3px 0 8px; font-size:11pt; color:var(--accent); font-weight:600; }
+  .contact-line{ font-size:9pt; color:var(--muted); }
+  .contact-line span{ white-space:nowrap; }
+  .contact-line span + span::before{ content:"  ·  "; color:var(--line); }
+
+  h2{
+    font-size:10pt; text-transform:uppercase; letter-spacing:.09em;
+    margin:16px 0 8px; padding-bottom:3px; border-bottom:1px solid var(--line);
+  }
+
+  .summary{ margin:0; color:var(--ink); }
+
+  .role{ margin-bottom:11px; page-break-inside:avoid; }
+  .role-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  .role-title{ font-weight:700; font-size:10.6pt; }
+  .role-date{ font-size:8.8pt; color:var(--muted); white-space:nowrap; }
+  .role-org{ font-size:9.2pt; color:var(--accent); margin-bottom:3px; }
+  ul{ margin:3px 0 0; padding-left:15px; }
+  li{ margin-bottom:2px; }
+
+  .two-col{ display:flex; gap:18px; }
+  .two-col > div{ flex:1; }
+
+  .kv{ margin:0; }
+  .kv dt{ font-weight:700; font-size:9.4pt; margin-top:6px; }
+  .kv dd{ margin:0 0 2px; font-size:9.2pt; color:var(--muted); }
+
+  .tags{ font-size:9pt; color:var(--muted); line-height:1.7; }
+  .tags b{ color:var(--ink); font-weight:600; }
+
+  .now{
+    font-size:7.4pt; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    color:#fff; background:var(--accent); padding:1px 5px; border-radius:8px;
+    vertical-align:2px; margin-left:5px;
+  }
+
+  footer{
+    margin-top:16px; padding-top:7px; border-top:1px solid var(--line);
+    font-size:8pt; color:var(--muted); text-align:center;
+  }
+
+  @media print{
+    body{ font-size:9.6pt; }
+    .sheet{ padding:0; max-width:none; }
+    h2{ page-break-after:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1>Oybek Gaffarov</h1>
+    <div class="subtitle">Senior IT Specialist · System Administrator · Network Engineer</div>
+    <div class="contact-line">
+      <span>gaffarovoybek21@gmail.com</span><span>+998 93 008 5860</span><span>+601 12 374 1353</span><span>Samarkand, Uzbekistan</span><span>ogaffarov.uz</span><span>linkedin.com/in/oybek21</span>
+    </div>
+  </header>
+
+  <h2>Profile</h2>
+  <p class="summary">
+    Senior IT specialist and system administrator with 10+ years across networking, infrastructure, identity,
+    endpoint security and ERP, spanning Malaysia and Uzbekistan. I design, secure and run the IT backbone of
+    modern businesses, supporting a remote-first, security-conscious workforce with zero-trust access, automated
+    backups and tight SLAs, while keeping everything documented and reliable.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Senior Information Technology Specialist</span>
+      <span class="role-date">Aug 2020 – Present</span>
+    </div>
+    <div class="role-org">Nishon Group · Full-time · Samarkand, Uzbekistan</div>
+    <ul>
+      <li>Redesigned the office network; deployed <b>Zyxel firewalls</b>, managed switches, dual-WAN and SSL/IPsec VPN.</li>
+      <li>Deployed <b>Windows Server</b> (AD, DNS), administered <b>Microsoft 365</b> and automated NAS backups.</li>
+      <li>Administered <b>1C:Enterprise</b> and provisioned infrastructure for a new ERP rollout.</li>
+      <li>Deployed industrial PCs, integrated barcode scanners and weighing terminals, managed <b>Yeastar IP PBX</b> and CCTV.</li>
+      <li>Developed a driver-facing <b>progressive web app (PWA)</b> for confirming delivered orders from the road, integrated with <b>1C:Enterprise</b> over its <b>OData</b> REST interface.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Duty IT Support</span>
+      <span class="role-date">May 2024 – Present</span>
+    </div>
+    <div class="role-org">ogaffarov.uz · Part-time · Remote</div>
+    <ul>
+      <li>Administer <b>JumpCloud</b> for centralized directory, SSO and user lifecycle management.</li>
+      <li>Manage <b>Google Workspace</b> provisioning, group policies and Drive security.</li>
+      <li>Device compliance and patching via <b>ManageEngine Endpoint Central</b> across a mixed macOS/Windows fleet.</li>
+      <li>Secure remote access with <b>FortiClient ZTNA</b> and <b>Pritunl VPN</b>; Tier 2/3 support through <b>Jira</b> with SLA and RCA.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Technical Specialist</span>
+      <span class="role-date">Mar 2020 – Jul 2020</span>
+    </div>
+    <div class="role-org">Westminster International University · Tashkent, Uzbekistan</div>
+    <ul>
+      <li>IT operations and network switching support in a university environment.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">RAN Engineer</span>
+      <span class="role-date">Oct 2019 – Mar 2020</span>
+    </div>
+    <div class="role-org">ZTE Investment · Tashkent, Uzbekistan</div>
+    <ul>
+      <li>Configuration and commissioning of new 2G/3G base stations (BBU/RRU).</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Level 1 IT Network Support</span>
+      <span class="role-date">Nov 2017 – Oct 2019</span>
+    </div>
+    <div class="role-org">Asia Pacific University (APU) · Kuala Lumpur, Malaysia</div>
+    <ul>
+      <li>Configured <b>Cisco</b> and <b>Ruckus</b> switches and wireless devices; network maintenance and L1 support.</li>
+      <li>Installed CCTV/NVR and ZKTeco access control; connected MS SQL databases to applications.</li>
+      <li>Project member for the <b>Cisco Academy</b> build.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Technical Assistant</span>
+      <span class="role-date">Sep 2014 – Nov 2017</span>
+    </div>
+    <div class="role-org">Asia Pacific University (APU) · Kuala Lumpur, Malaysia</div>
+    <ul>
+      <li>Hardware and software setup in labs; helpdesk call handling and task assignment.</li>
+      <li>Troubleshot PC and network issues; LAN cabling and access point installation.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="two-col">
+    <div>
+      <dl class="kv">
+        <dt>M.Sc., Security Architecture <span class="now">In progress</span></dt>
+        <dd>ITP University · Tashkent, Uzbekistan</dd>
+        <dd>2026 – 2028</dd>
+      </dl>
+    </div>
+    <div>
+      <dl class="kv">
+        <dt>B.Tech, Business Information System (BIS)</dt>
+        <dd>Asia Pacific University of Technology &amp; Innovation</dd>
+        <dd>Kuala Lumpur, Malaysia · 2012 – 2016</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>Certifications</h2>
+  <div class="tags">
+    <b>Introduction to R</b> — DataCamp &nbsp;·&nbsp; <b>Certificate of Participation</b> — Maybank, Jun 2016
+  </div>
+
+  <h2>Technical Skills</h2>
+  <div class="tags">
+    <b>Network &amp; Infrastructure:</b> Cisco, Ruckus Wireless, managed switching, dual-WAN, structured cabling, Zyxel &amp; Fortinet firewalls, IPsec/SSL VPN, Pritunl<br>
+    <b>Servers &amp; Directory:</b> Windows Server, Active Directory, DNS, Microsoft 365, Google Workspace, NAS and backup automation<br>
+    <b>Identity &amp; Security:</b> JumpCloud, SSO and user lifecycle, FortiClient ZTNA, zero-trust access, ManageEngine Endpoint Central, MDM/UEM<br>
+    <b>Enterprise Systems:</b> 1C:Enterprise / ERP administration, OData REST integration, SQL, barcode and weighing terminal integration<br>
+    <b>Development:</b> Progressive web apps (PWA), 1C integration over OData, internal tooling and automation<br>
+    <b>Communications:</b> Yeastar IP PBX / VoIP, CCTV / NVR, ZKTeco access control<br>
+    <b>Platforms &amp; Tools:</b> Windows 10/11, macOS, Linux, Jira Service Management
+  </div>
+
+  <h2>Languages</h2>
+  <div class="tags">English &nbsp;·&nbsp; Russian &nbsp;·&nbsp; Uzbek</div>
+
+  <footer>ogaffarov.uz · gaffarovoybek21@gmail.com · +998 93 008 5860</footer>
+
+</div>
+</body>
+</html>

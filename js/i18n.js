@@ -55,12 +55,13 @@
 
       "exp.t2.period": "Авг 2020 – по настоящее время",
       "exp.t2.title": "Старший специалист по информационным технологиям",
-      "exp.t2.company": "Nishon Baht · Полная занятость · Самарканд, Узбекистан",
+      "exp.t2.company": "Nishon Group · Полная занятость · Самарканд, Узбекистан",
       "exp.t2.desc": "Полностью отвечаю за ИТ-стек — сети, серверы, безопасность и промышленные системы — для производственного бизнеса.",
       "exp.t2.li1": "Перепроектировал офисную сеть; внедрил <strong>межсетевые экраны Zyxel</strong>, управляемые коммутаторы, двойной WAN и SSL/IPsec VPN.",
       "exp.t2.li2": "Развернул <strong>Windows Server</strong> (AD, DNS), администрировал <strong>Microsoft 365</strong> и автоматизировал резервное копирование NAS.",
       "exp.t2.li3": "Администрировал <strong>1С:Предприятие</strong> и подготовил инфраструктуру для нового внедрения ERP.",
       "exp.t2.li4": "Развернул промышленные ПК, интегрировал сканеры штрих-кодов и весовые терминалы, управлял <strong>Yeastar IP PBX</strong> и видеонаблюдением.",
+      "exp.t2.li5": "Разработал <strong>прогрессивное веб-приложение (PWA)</strong> для водителей — подтверждение доставленных заказов прямо с маршрута, с интеграцией в <strong>1С:Предприятие</strong> через REST-интерфейс <strong>OData</strong>.",
 
       "exp.t3.period": "Март 2020 – Июль 2020",
       "exp.t3.title": "Технический специалист",
@@ -90,6 +91,53 @@
       "edu.t2.title": "Введение в R",
       "edu.t3.period": "Июн 2016",
       "edu.t3.title": "Сертификат участия",
+
+      "nav.projects": "Проекты",
+      "hero.btn.cv": "Скачать резюме",
+      "contact.btn.cv": "Скачать резюме (PDF)",
+      "cv.href": "Oybek_Gaffarov_CV_RU.pdf",
+
+      "about.edu.msc": "<strong>Магистр, Архитектура безопасности</strong> — Университет ITP, Ташкент, Узбекистан (2026 – 2028, в процессе)",
+      "edu.t0.status": "В процессе",
+      "edu.t0.title": "Магистр — Архитектура безопасности",
+      "edu.t0.company": "Университет ITP · Ташкент, Узбекистан",
+
+      "creds.title": "Квалификации",
+      "cred.msc.title": "Магистр, Архитектура безопасности",
+      "cred.msc.issuer": "Университет ITP · Ташкент",
+      "cred.btech.title": "Бакалавр, Бизнес-информационные системы",
+      "cred.btech.issuer": "APU · Куала-Лумпур",
+      "cred.r.title": "Введение в R",
+      "cred.r.issuer": "DataCamp",
+      "cred.maybank.title": "Сертификат участия",
+      "cred.maybank.issuer": "Maybank",
+
+      "projects.eyebrow": "Избранные работы",
+      "projects.h2": "Проекты и кейсы",
+      "projects.lead": "Несколько проектов, показывающих мой подход к инфраструктурным задачам от начала до конца.",
+      "proj.network.title": "Редизайн офисной сети",
+      "proj.network.meta": "Nishon Group · Самарканд",
+      "proj.network.problem": "Устаревшая плоская сеть с одним каналом теряла производственный трафик, а безопасного удалённого доступа не было вовсе.",
+      "proj.network.did": "Перестроил топологию на базе межсетевых экранов Zyxel и управляемых коммутаторов, добавил резервирование dual-WAN и развернул SSL и IPsec VPN для доступа извне.",
+      "proj.erp.title": "Внедрение 1С:Предприятие (ERP)",
+      "proj.erp.meta": "Nishon Group · Производство",
+      "proj.erp.problem": "Производственные данные жили на бумаге и в таблицах, поэтому склад и весовые показатели никогда не сходились.",
+      "proj.erp.did": "Подготовил серверную инфраструктуру и СУБД, администрировал 1С:Предприятие и интегрировал сканеры штрих-кодов и весовые терминалы на промышленных ПК с автоматическим резервным копированием на NAS.",
+      "proj.pwa.title": "PWA для водителей",
+      "proj.pwa.meta": "Nishon Group · Логистика",
+      "proj.pwa.problem": "Водителям нужен был способ подтверждать доставленные заказы прямо в пути, чтобы результат сразу попадал в 1С, а не ждал бумаг.",
+      "proj.pwa.did": "Разработал устанавливаемое прогрессивное веб-приложение, в котором водители отмечают заказы как доставленные, подключив его к 1С:Предприятие через REST-интерфейс OData — каждое подтверждение сразу обновляет запись заказа.",
+      "proj.ztna.title": "Доступ по модели Zero Trust",
+      "proj.ztna.meta": "ogaffarov.uz · Распределённая команда",
+      "proj.ztna.problem": "Удалённой команде на смешанном парке macOS и Windows требовалась единая учётная запись и отказ от плоского доверия VPN.",
+      "proj.ztna.did": "Централизовал каталог, SSO и жизненный цикл пользователей в JumpCloud вместе с Google Workspace, обеспечил соответствие устройств через ManageEngine Endpoint Central и заменил сплошной VPN-доступ на FortiClient ZTNA и Pritunl.",
+      "proj.cisco.title": "Создание Cisco Academy",
+      "proj.cisco.meta": "Asia Pacific University · Куала-Лумпур",
+      "proj.cisco.problem": "Университету нужна была рабочая учебная лаборатория для практических занятий по сетям.",
+      "proj.cisco.did": "Вошёл в команду проекта: настраивал коммутацию и беспроводные сети Cisco и Ruckus, прокладывал кабель и точки доступа, подключал базы данных MS SQL к приложениям лаборатории.",
+
+      "form.sending": "Отправка...",
+      "form.error": "Что-то пошло не так. Напишите мне напрямую на email.",
 
       "services.eyebrow": "Предложения",
       "services.h2": "Как я могу помочь",
@@ -170,6 +218,13 @@
     return localStorage.getItem(STORAGE_KEY) || 'en';
   }
 
+  // Lookup for strings created at runtime (e.g. contact form status).
+  // Falls back to the supplied English text when no translation exists.
+  window.i18nT = function(key, fallback){
+    var d = dict[getLang()];
+    return (d && d[key]) || fallback;
+  };
+
   function setLang(lang){
     localStorage.setItem(STORAGE_KEY, lang);
     apply(lang);
@@ -197,6 +252,12 @@
       if(lang === 'en') return;
       if(d && d[key]) el.setAttribute('placeholder', d[key]);
     });
+    // Swaps a link target per language — used for the CV, which has one PDF per language
+    document.querySelectorAll('[data-i18n-href]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-href');
+      if(lang === 'en') return;
+      if(d && d[key]) el.setAttribute('href', d[key]);
+    });
   }
 
   // Cache original English text so we can restore it when switching back
@@ -211,9 +272,16 @@
     document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
       originals.push({el:el, type:'ph', value: el.getAttribute('placeholder')});
     });
+    document.querySelectorAll('[data-i18n-href]').forEach(function(el){
+      originals.push({el:el, type:'href', value: el.getAttribute('href')});
+    });
 
     var lang = getLang();
-    if(lang === 'ru') apply('ru');
+    if(lang === 'ru'){
+      apply('ru');
+      // setLang() normally does this, but a saved-language first paint bypasses it
+      document.documentElement.setAttribute('lang', 'ru');
+    }
     document.querySelectorAll('.lang-toggle').forEach(function(btn){
       btn.textContent = lang === 'ru' ? 'РУ' : 'EN';
       btn.addEventListener('click', function(){
@@ -223,6 +291,7 @@
             if(o.type === 'text') o.el.textContent = o.value;
             else if(o.type === 'html') o.el.innerHTML = o.value;
             else if(o.type === 'ph') o.el.setAttribute('placeholder', o.value);
+            else if(o.type === 'href') o.el.setAttribute('href', o.value);
           });
           localStorage.setItem(STORAGE_KEY, 'en');
           document.querySelectorAll('.lang-toggle').forEach(function(b){ b.textContent = 'EN'; });

@@ -449,7 +449,7 @@
       e.preventDefault();
       var status = document.getElementById('form-status');
       var data = new FormData(form);
-      status.textContent = 'Sending...';
+      status.textContent = (window.i18nT ? window.i18nT('form.sending', 'Sending...') : 'Sending...');
       status.className = '';
       fetch('contact_process.php', { method: 'POST', body: data })
         .then(function(res){ return res.json().then(function(json){ return { ok: res.ok, json: json }; }); })
@@ -460,7 +460,8 @@
           form.reset();
         })
         .catch(function(err){
-          status.textContent = err.message || 'Something went wrong. Please email me directly instead.';
+          var fallback = 'Something went wrong. Please email me directly instead.';
+          status.textContent = err.message || (window.i18nT ? window.i18nT('form.error', fallback) : fallback);
           status.className = 'err';
         });
     });

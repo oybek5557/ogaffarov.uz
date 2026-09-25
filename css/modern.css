@@ -383,6 +383,44 @@ body{opacity:1;transition:opacity .5s ease;}
 /* Parallax-ready elements */
 .hero-portrait,.hero .blob{will-change:transform;}
 
+/* Projects / case studies */
+.card.project{display:flex;flex-direction:column;}
+.project-meta{
+  font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;
+  margin:0 0 12px;font-weight:600;
+}
+.card.project .project-problem{
+  color:var(--text);font-size:.9rem;line-height:1.6;margin:0 0 10px;
+  padding-left:12px;border-left:2px solid var(--accent-2);
+}
+.project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.project-tags span{
+  font-size:.74rem;color:var(--text-dim);background:var(--bg-soft);
+  border:1px solid var(--border);padding:5px 11px;border-radius:999px;
+}
+
+/* Credentials */
+.creds-title{margin:44px 0 20px;font-size:1.1rem;}
+.creds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.cred{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;
+  transition:transform .3s ease,border-color .3s ease;
+}
+.cred:hover{transform:translateY(-5px);border-color:var(--accent);}
+.cred i{font-size:1.5rem;color:var(--accent);margin-bottom:4px;}
+.cred h5{margin:0;font-size:.9rem;line-height:1.4;}
+.cred span{font-size:.78rem;color:var(--text-dim);}
+.cred .cred-year{color:var(--accent-2);font-weight:600;}
+.pill-now{
+  display:inline-block;margin-left:8px;font-size:.68rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;
+  /* fixed dark ink: --accent-2 stays mint in both themes, so --bg would
+     flip to near-white in light mode and fail contrast */
+  color:#0b0f17;
+  background:var(--accent-2);padding:2px 8px;border-radius:999px;vertical-align:middle;
+}
+
 @media (max-width:900px){
   .hero .container{grid-template-columns:1fr;text-align:center;}
   .hero-portrait{order:-1;}
@@ -391,4 +429,9 @@ body{opacity:1;transition:opacity .5s ease;}
   .cards-grid{grid-template-columns:1fr;}
   .form-row{grid-template-columns:1fr;}
   .facts{grid-template-columns:1fr;}
+  .creds-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (max-width:520px){
+  .creds-grid{grid-template-columns:1fr;}
 }

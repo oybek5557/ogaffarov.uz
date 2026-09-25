@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ойбек Гаффаров — Резюме</title>
+<meta name="robots" content="noindex">
+<style>
+  @page { size: A4; margin: 14mm 14mm 12mm; }
+
+  :root{
+    --ink:#14181f;
+    --muted:#5a6473;
+    --line:#d8dde5;
+    --accent:#2f5bd0;
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:10.2pt;
+    line-height:1.45;
+    color:var(--ink);
+    background:#fff;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+
+  .sheet{ max-width:190mm; margin:0 auto; padding:10mm 0; }
+
+  header{ border-bottom:2px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  h1{ margin:0; font-size:21pt; letter-spacing:-.4px; }
+  .subtitle{ margin:3px 0 8px; font-size:11pt; color:var(--accent); font-weight:600; }
+  .contact-line{ font-size:9pt; color:var(--muted); }
+  .contact-line span{ white-space:nowrap; }
+  .contact-line span + span::before{ content:"  ·  "; color:var(--line); }
+
+  h2{
+    font-size:10pt; text-transform:uppercase; letter-spacing:.09em;
+    margin:16px 0 8px; padding-bottom:3px; border-bottom:1px solid var(--line);
+  }
+
+  .summary{ margin:0; color:var(--ink); }
+
+  .role{ margin-bottom:11px; page-break-inside:avoid; }
+  .role-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  .role-title{ font-weight:700; font-size:10.6pt; }
+  .role-date{ font-size:8.8pt; color:var(--muted); white-space:nowrap; }
+  .role-org{ font-size:9.2pt; color:var(--accent); margin-bottom:3px; }
+  ul{ margin:3px 0 0; padding-left:15px; }
+  li{ margin-bottom:2px; }
+
+  .two-col{ display:flex; gap:18px; }
+  .two-col > div{ flex:1; }
+
+  .kv{ margin:0; }
+  .kv dt{ font-weight:700; font-size:9.4pt; margin-top:6px; }
+  .kv dd{ margin:0 0 2px; font-size:9.2pt; color:var(--muted); }
+
+  .tags{ font-size:9pt; color:var(--muted); line-height:1.7; }
+  .tags b{ color:var(--ink); font-weight:600; }
+
+  .now{
+    font-size:7.4pt; font-weight:700; text-transform:uppercase; letter-spacing:.05em;
+    color:#fff; background:var(--accent); padding:1px 5px; border-radius:8px;
+    vertical-align:2px; margin-left:5px;
+  }
+
+  footer{
+    margin-top:16px; padding-top:7px; border-top:1px solid var(--line);
+    font-size:8pt; color:var(--muted); text-align:center;
+  }
+
+  @media print{
+    body{ font-size:9.6pt; }
+    .sheet{ padding:0; max-width:none; }
+    h2{ page-break-after:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1>Ойбек Гаффаров</h1>
+    <div class="subtitle">Старший ИТ-специалист · Системный администратор · Сетевой инженер</div>
+    <div class="contact-line">
+      <span>gaffarovoybek21@gmail.com</span><span>+998 93 008 5860</span><span>+601 12 374 1353</span><span>Самарканд, Узбекистан</span><span>ogaffarov.uz</span><span>linkedin.com/in/oybek21</span>
+    </div>
+  </header>
+
+  <h2>О себе</h2>
+  <p class="summary">
+    Старший ИТ-специалист и системный администратор с опытом более 10 лет в сетях, инфраструктуре,
+    управлении доступом, безопасности конечных точек и ERP — в Малайзии и Узбекистане. Проектирую,
+    защищаю и поддерживаю ИТ-основу современного бизнеса: обеспечиваю распределённой команде доступ
+    по модели нулевого доверия, автоматическое резервное копирование и чёткие SLA, сохраняя всю
+    документацию в порядке.
+  </p>
+
+  <h2>Опыт работы</h2>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Старший специалист по информационным технологиям</span>
+      <span class="role-date">Авг 2020 – по настоящее время</span>
+    </div>
+    <div class="role-org">Nishon Group · Полная занятость · Самарканд, Узбекистан</div>
+    <ul>
+      <li>Перепроектировал офисную сеть; внедрил <b>межсетевые экраны Zyxel</b>, управляемые коммутаторы, двойной WAN и SSL/IPsec VPN.</li>
+      <li>Развернул <b>Windows Server</b> (AD, DNS), администрировал <b>Microsoft 365</b> и автоматизировал резервное копирование на NAS.</li>
+      <li>Администрировал <b>1С:Предприятие</b> и подготовил инфраструктуру для нового внедрения ERP.</li>
+      <li>Развернул промышленные ПК, интегрировал сканеры штрих-кодов и весовые терминалы, управлял <b>Yeastar IP PBX</b> и видеонаблюдением.</li>
+      <li>Разработал <b>прогрессивное веб-приложение (PWA)</b> для водителей — подтверждение доставленных заказов прямо с маршрута, с интеграцией в <b>1С:Предприятие</b> через REST-интерфейс <b>OData</b>.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Дежурная ИТ-поддержка</span>
+      <span class="role-date">Май 2024 – по настоящее время</span>
+    </div>
+    <div class="role-org">ogaffarov.uz · Частичная занятость · Удалённо</div>
+    <ul>
+      <li>Администрирую <b>JumpCloud</b> — централизованный каталог, SSO и жизненный цикл пользователей.</li>
+      <li>Управляю <b>Google Workspace</b>: провижининг, групповые политики и безопасность Drive.</li>
+      <li>Соответствие и обновление устройств через <b>ManageEngine Endpoint Central</b> на смешанном парке macOS/Windows.</li>
+      <li>Безопасный удалённый доступ через <b>FortiClient ZTNA</b> и <b>Pritunl VPN</b>; поддержка уровня 2/3 в <b>Jira</b> с SLA и анализом первопричин.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Технический специалист</span>
+      <span class="role-date">Мар 2020 – Июл 2020</span>
+    </div>
+    <div class="role-org">Вестминстерский международный университет · Ташкент, Узбекистан</div>
+    <ul>
+      <li>ИТ-операции и поддержка сетевой коммутации в университетской среде.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Инженер RAN</span>
+      <span class="role-date">Окт 2019 – Мар 2020</span>
+    </div>
+    <div class="role-org">ZTE Investment · Ташкент, Узбекистан</div>
+    <ul>
+      <li>Настройка и ввод в эксплуатацию новых базовых станций 2G/3G (BBU/RRU).</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">ИТ-поддержка сети, уровень 1</span>
+      <span class="role-date">Ноя 2017 – Окт 2019</span>
+    </div>
+    <div class="role-org">Asia Pacific University (APU) · Куала-Лумпур, Малайзия</div>
+    <ul>
+      <li>Настраивал коммутаторы и беспроводное оборудование <b>Cisco</b> и <b>Ruckus</b>; обслуживание сети и поддержка уровня 1.</li>
+      <li>Устанавливал CCTV/NVR и системы контроля доступа ZKTeco; подключал базы данных MS SQL к приложениям.</li>
+      <li>Участник проекта по созданию <b>Cisco Academy</b>.</li>
+    </ul>
+  </div>
+
+  <div class="role">
+    <div class="role-head">
+      <span class="role-title">Технический ассистент</span>
+      <span class="role-date">Сен 2014 – Ноя 2017</span>
+    </div>
+    <div class="role-org">Asia Pacific University (APU) · Куала-Лумпур, Малайзия</div>
+    <ul>
+      <li>Настройка оборудования и ПО в лабораториях; приём заявок и распределение задач.</li>
+      <li>Диагностика проблем с ПК и сетью; прокладка ЛВС и установка точек доступа.</li>
+    </ul>
+  </div>
+
+  <h2>Образование</h2>
+  <div class="two-col">
+    <div>
+      <dl class="kv">
+        <dt>Магистр, Архитектура безопасности <span class="now">В процессе</span></dt>
+        <dd>Университет ITP · Ташкент, Узбекистан</dd>
+        <dd>2026 – 2028</dd>
+      </dl>
+    </div>
+    <div>
+      <dl class="kv">
+        <dt>Бакалавр, Бизнес-информационные системы (BIS)</dt>
+        <dd>Технологический университет Азии и Тихого океана (APU)</dd>
+        <dd>Куала-Лумпур, Малайзия · 2012 – 2016</dd>
+      </dl>
+    </div>
+  </div>
+
+  <h2>Сертификаты</h2>
+  <div class="tags">
+    <b>Введение в R</b> — DataCamp &nbsp;·&nbsp; <b>Сертификат участия</b> — Maybank, Июн 2016
+  </div>
+
+  <h2>Технические навыки</h2>
+  <div class="tags">
+    <b>Сети и инфраструктура:</b> Cisco, Ruckus Wireless, управляемая коммутация, двойной WAN, структурированная кабельная система, межсетевые экраны Zyxel и Fortinet, IPsec/SSL VPN, Pritunl<br>
+    <b>Серверы и каталоги:</b> Windows Server, Active Directory, DNS, Microsoft 365, Google Workspace, NAS и автоматизация резервного копирования<br>
+    <b>Идентификация и безопасность:</b> JumpCloud, SSO и жизненный цикл пользователей, FortiClient ZTNA, доступ с нулевым доверием, ManageEngine Endpoint Central, MDM/UEM<br>
+    <b>Корпоративные системы:</b> администрирование 1С:Предприятие / ERP, интеграция через OData REST, SQL, сканеры штрих-кодов и весовые терминалы<br>
+    <b>Разработка:</b> прогрессивные веб-приложения (PWA), интеграция с 1С через OData, внутренние инструменты и автоматизация<br>
+    <b>Связь:</b> Yeastar IP PBX / VoIP, CCTV / NVR, контроль доступа ZKTeco<br>
+    <b>Платформы и инструменты:</b> Windows 10/11, macOS, Linux, Jira Service Management
+  </div>
+
+  <h2>Языки</h2>
+  <div class="tags">Английский &nbsp;·&nbsp; Русский &nbsp;·&nbsp; Узбекский</div>
+
+  <footer>ogaffarov.uz · gaffarovoybek21@gmail.com · +998 93 008 5860</footer>
+
+</div>
+</body>
+</html>
